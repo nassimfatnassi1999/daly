@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    hostname: ${EUREKA_HOSTNAME:localhost}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${SERVER_PORT:8099}/eureka/
+
+server:
+  port: ${SERVER_PORT:8099}
+
+spring:
+  cloud:
+    config:
+      enabled: false
+

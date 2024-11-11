@@ -1,0 +1,7 @@
+
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(‰Ì¨øÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(öÙ‘Àÿÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(úû¼¦
+L
+java:S6437"6Revoke and change this password, as it is compromised.(àŒ‚Ç
+V	java:S125"<This block of commented-out lines of code should be removed.(Ìà½ªÿÿÿÿÿ

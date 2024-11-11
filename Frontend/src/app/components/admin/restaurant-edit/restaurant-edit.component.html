@@ -1,0 +1,77 @@
+<form *ngIf="restaurantForm" [formGroup]="restaurantForm" class="container" style="margin-top: 200px;" (ngSubmit)="updateRestaurant()">
+  <h2>Update Restaurant</h2>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" class="form-control" id="name" name="name" formControlName="name">
+    <div *ngIf="restaurantForm.get('name')?.invalid && (restaurantForm.get('name')?.dirty || restaurantForm.get('name')?.touched)" class="text-danger">
+      <div *ngIf="restaurantForm.get('name')?.errors?.['required']">Name is required.</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="logo" class="form-label">Logo:</label>
+    <input type="file" class="form-control" id="logo" name="logo" (change)="handleLogoInput($event)" accept="image/*">
+    <img id="logoPreview" [src]="restaurantForm.get('logo') ? 'assets/images/' + restaurantForm.get('logo') : ''" alt="Logo Preview" class="img-thumbnail" style="max-width: 200px; max-height: 200px;">
+    <div *ngIf="restaurantForm.get('logo')?.invalid && (restaurantForm.get('logo')?.dirty || restaurantForm.get('logo')?.touched)" class="text-danger">
+      <div *ngIf="restaurantForm.get('logo')?.errors?.['required']">Logo is required.</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Category:</label>
+    <select class="form-select" id="category" name="category" formControlName="category">
+      <option *ngFor="let category of getCategoryKeys()" [value]="category">{{ category }}</option>
+    </select>
+    <div *ngIf="restaurantForm.get('category')?.invalid && (restaurantForm.get('category')?.dirty || restaurantForm.get('category')?.touched)" class="text-danger">
+      <div *ngIf="restaurantForm.get('category')?.errors?.['required']">Category is required.</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="contactInfo" class="form-label">Contact Info:</label>
+    <input type="text" class="form-control" id="contactInfo" name="contactInfo" formControlName="contactInfo" pattern="[0-9]{8}">
+    <div *ngIf="restaurantForm.get('contactInfo')?.invalid && (restaurantForm.get('contactInfo')?.dirty || restaurantForm.get('contactInfo')?.touched)" class="text-danger">
+      <div *ngIf="restaurantForm.get('contactInfo')?.errors?.['required']">Phone number is required.</div>
+      <div *ngIf="restaurantForm.get('contactInfo')?.errors?.['pattern']">Invalid phone number. Please enter exactly 8 digits.</div>
+    </div>
+</div>
+
+  <div class="mb-3">
+    <label for="averageRating" class="form-label">Average Rating:</label>
+    <input type="number" class="form-control" id="averageRating" name="averageRating" formControlName="averageRating">
+    <div *ngIf="restaurantForm.get('averageRating')?.invalid && (restaurantForm.get('averageRating')?.dirty || restaurantForm.get('averageRating')?.touched)" class="text-danger">
+      <div *ngIf="restaurantForm.get('averageRating')?.errors?.['required']">Average Rating is required.</div>
+      <div *ngIf="restaurantForm.get('averageRating')?.errors?.['min']">Average Rating must be at least 1.</div>
+      <div *ngIf="restaurantForm.get('averageRating')?.errors?.['max']">Average Rating cannot exceed 5.</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="waitTime" class="form-label">Wait Time:</label>
+    <input type="number" class="form-control" id="waitTime" name="waitTime" formControlName="waitTime">
+    <div *ngIf="restaurantForm.get('waitTime')?.invalid && (restaurantForm.get('waitTime')?.dirty || restaurantForm.get('waitTime')?.touched)" class="text-danger">
+      <div *ngIf="restaurantForm.get('waitTime')?.errors?.['required']">Wait Time is required.</div>
+      <div *ngIf="restaurantForm.get('waitTime')?.errors?.['min']">Wait Time must be at least 5.</div>
+      <div *ngIf="restaurantForm.get('waitTime')?.errors?.['max']">Wait Time cannot exceed 60.</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="form-check">
+      <input type="checkbox" formControlName="isEcoFriendly" class="form-check-input" id="isEcoFriendly">
+      <label class="form-check-label" for="isEcoFriendly">Eco-Friendly</label>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-check">
+      <input type="checkbox" formControlName="delivery" class="form-check-input" id="delivery">
+      <label class="form-check-label" for="delivery">Delivery</label>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-secondary" (click)="goBack()">Go Back</button>
+    <button type="submit" class="btn btn-primary">Update Restaurant</button>
+  </div></form>
+ 

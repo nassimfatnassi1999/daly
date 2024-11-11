@@ -1,0 +1,154 @@
+version: '3.8'
+
+services:
+  # Eureka Discovery Service
+  eureka:
+    build:
+      context: ./discoveryEureka
+      dockerfile: Dockerfile
+    container_name: eureka-service
+    ports:
+      - "8099:8099"
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # API Gateway
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: gateway-service
+    ports:
+      - "9090:9090"
+    environment:
+      - EUREKA_SERVER_URI=http://eureka-service:8099/eureka
+      - USER_SERVICE_URI=http://user-service:9070
+      - EVENT_SERVICE_URI=http://event-service:9010
+      - FEEDBACK_SERVICE_URI=http://feedback-service:9020
+      - NEWS_SERVICE_URI=http://news-service:9040
+    depends_on:
+      - eureka
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # User Database
+  user-db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: user-service
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # User Microservice
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "9070:9070"
+    environment:
+      - DATABASE_URL=jdbc:mysql://user-db:3306/user-service
+      - EUREKA_SERVER_URI=http://eureka-service:8099/eureka
+    depends_on:
+      - eureka
+      - user-db
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # Event Database
+  event-db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: event-service
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3308:3306"
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # Event and Donation Microservice
+  event-service:
+    build:
+      context: ./eventAndDonation-service
+      dockerfile: Dockerfile
+    ports:
+      - "9010:9010"
+    environment:
+      - DATABASE_URL=jdbc:mysql://event-db:3306/event-service
+      - EUREKA_SERVER_URI=http://eureka-service:8099/eureka
+    depends_on:
+      - eureka
+      - event-db
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # Feedback Database
+  feedback-db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: feedback-service
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3309:3306"
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # Feedback Microservice
+  feedback-service:
+    build:
+      context: ./feedBack-service
+      dockerfile: Dockerfile
+    ports:
+      - "9020:9020"
+    environment:
+      - DATABASE_URL=jdbc:mysql://feedback-db:3306/feedback-service
+      - EUREKA_SERVER_URI=http://eureka-service:8099/eureka
+    depends_on:
+      - eureka
+      - feedback-db
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # News Database
+  news-db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: news-service
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3310:3306"
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+  # News Microservice
+  news-service:
+    build:
+      context: ./news-service
+      dockerfile: Dockerfile
+    ports:
+      - "9040:9040"
+    environment:
+      - DATABASE_URL=jdbc:mysql://news-db:3306/news-service
+      - EUREKA_SERVER_URI=http://eureka-service:8099/eureka
+    depends_on:
+      - eureka
+      - news-db
+    networks:
+      - microservice-network
+    restart: unless-stopped
+
+networks:
+  microservice-network:
+    driver: bridge

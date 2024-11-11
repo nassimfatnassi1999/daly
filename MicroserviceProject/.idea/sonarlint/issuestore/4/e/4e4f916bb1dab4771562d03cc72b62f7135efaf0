@@ -1,0 +1,14 @@
+
+Œ	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ÙÈöJ$ba757996-d35b-4b2c-aa5b-e95c7ac15bd8
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(öÙ‘ÀÿÿÿÿÿJ$3ed75d1c-6e88-4e15-8434-d7094c0d131c
+
+java:S1488j"\Immediately return this expression instead of assigning it to the temporary variable "user".(åÑ°ÿÿÿÿÿJ$92d90cb5-9544-463b-b5cb-c5012b99f75b
+¥
+java:S1488š"hImmediately return this expression instead of assigning it to the temporary variable "updatedFeedbacks".(¯øˆ³J$10d09185-6cb1-49f3-afad-c98d2554bc99
+~
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞJ$9447e715-0189-428c-9fb2-e66f02a387cb
+|
+java:S18540"9Remove this useless assignment to local variable "email".(º‰€°8éÃÿ´±2J$6961915a-4c9e-4419-9599-b6d984706723
+m
+java:S14810"*Remove this unused "email" local variable.(º‰€°8ïÃÿ´±2J$ac2df4af-b0ef-457a-b71f-be1a4233033e
+e	java:S108“")Either remove or fill this block of code.(å¥‡J$728575a9-5572-4e99-a36c-d179e38564c4

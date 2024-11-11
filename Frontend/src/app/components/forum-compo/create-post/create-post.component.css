@@ -1,0 +1,72 @@
+/* Style for form container */
+/* Style for form container */
+form {
+  width: 90%; /* Update this line */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+ 
+  
+  /* Style for form elements */
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  form textarea,
+  form input[type="file"],
+  form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for buttons */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submit-btn,
+  .cancel-btn {
+    flex: 2;
+    padding: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: larger;
+  }
+  
+  .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #ccc;
+  }
+  .intro-text {
+  text-align: center;
+  padding-top: 40%; /* Adjusted padding for more space */
+  background-image: url('src/assets/img/Restaurant-Stock-Images-e1699951587809.webp');
+  background-size: cover;
+  background-position: center;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 50px 0; /* Adjust the padding as needed */
+  margin-top: 150px; /* Adjusted margin for more space */
+}
+
+.intro-lead-in {
+  font-size: 30px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}

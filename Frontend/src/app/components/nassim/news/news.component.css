@@ -1,0 +1,11 @@
+.delete-button {
+    background-color: red;
+}
+.card-image {
+    height: 200px; /* ou la hauteur souhaitée */
+    object-fit: cover; /* pour conserver les proportions et remplir l'espace */
+}
+.text-gray {
+    color:azure;
+}
+

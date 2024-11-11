@@ -1,0 +1,42 @@
+<div style="margin-top: 100px;" class="container-fluid fruite py-5">
+  
+  <div class="container py-5">
+    <div class="col-lg-4 text-start">
+      <h1>Restaurants</h1>
+    </div> 
+    <input type="text" class="form-control mb-3" placeholder="Search Restaurants" [(ngModel)]="searchTerm" (input)="updateFilteredList()">
+    
+    <div class="tab-class text-center">
+      <div class="row g-4">
+        <div class="col-lg-4 text-start">
+        </div>        
+      </div>
+      <div class="tab-content">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let r of filteredRestaurants | paginate :{itemsPerPage:4,currentPage:p}">
+              <div class="rounded position-relative fruite-item">
+                <div class="fruite-img">
+                  <img src="../../../assets/img/1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                </div>
+                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">{{r.category}}</div>
+                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                  <h4>{{r.name}}</h4>
+                  <p>{{r.category}}</p>
+                  <div class="d-flex justify-content-between flex-lg-wrap">
+                    <p class="text-dark fs-5 fw-bold mb-0">{{r.averageRating}}/5</p>
+                      <p class="text-dark fs-5 fw-bold mb-0">{{r.waitTime}} ◷</p>
+                      
+                  </div>
+                  <a [routerLink]="['/menu', r.id_restaurant]" class="btn border border-secondary rounded-pill px-3 text-primary">Show Menu</a>
+                  <a [routerLink]="['/restaurants/add-feedback', r.id_restaurant]" class="btn border border-secondary rounded-pill px-3 text-primary">Add Feedback</a>
+                </div>
+              </div>
+            </div>      
+          </div>
+        </div>     
+      </div>
+    </div>      
+  </div>
+</div>
+<pagination-controls class="pagination d-flex justify-content-center mt-5" (pageChange)="p = $event"></pagination-controls>

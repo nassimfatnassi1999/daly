@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="feedBack-service" />
+        <module name="news-service" />
+        <module name="discoveryEureka" />
+        <module name="restaurant-service" />
+        <module name="forum-service" />
+        <module name="user-service" />
+        <module name="gateway" />
+        <module name="allergy-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="commande-service" target="17" />
+      <module name="configServer" target="17" />
+      <module name="eventAndDonation-service" target="17" />
+      <module name="recomandation-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="allergy-service" options="-parameters" />
+      <module name="commande-service" options="-parameters" />
+      <module name="configServer" options="-parameters" />
+      <module name="discoveryEureka" options="-parameters" />
+      <module name="eventAndDonation-service" options="-parameters" />
+      <module name="feedBack-service" options="-parameters" />
+      <module name="forum-service" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="news-service" options="-parameters" />
+      <module name="recomandation-service" options="-parameters" />
+      <module name="restaurant-service" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+    </option>
+  </component>
+</project>

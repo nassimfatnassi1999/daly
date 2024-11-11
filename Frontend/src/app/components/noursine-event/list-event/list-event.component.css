@@ -1,0 +1,7 @@
+.container {
+    margin-top: 10px;
+}
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 29%;
+}

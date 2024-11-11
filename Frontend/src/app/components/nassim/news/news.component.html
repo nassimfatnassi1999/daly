@@ -1,0 +1,65 @@
+<!-- Single Page Header start -->
+<div class="container-fluid py-5">
+    <!-- Fruits Shop Start-->
+    <div class="container-fluid fruite py-5">
+        <div class="container py-5">
+            <h1 class="mb-4">News Page</h1>
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="row g-4">
+                        <div class="col-lg-9">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-6 col-lg-6 col-xl-4"
+                                    *ngFor="let item of newsTab  | paginate :{itemsPerPage:6,currentPage:p}">
+                                    <div class="rounded position-relative fruite-item" >
+                                        <div class="fruite-img" (click)="showCardDetails(item)">
+                                            <img src="{{ item.image.imageURL }}" class="img-fluid w-100 rounded-top card-image" alt="" />
+                                        </div>
+                                        <div class="text-white px-3 py-1 rounded position-absolute"
+                                            style="top: 10px; left: 10px" *ngIf="isNewItem(item.date)" [ngClass]="{'bg-warning': isNewItem(item.date)}">
+                                            New
+                                        </div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                            <h4>{{ item.title }}</h4>
+                                            <p>{{ item.date | date:'yyyy-MM-dd' }}</p>
+                            
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <button (click)="deleteNews(item.id)"
+                                                    class="btn border border-secondary rounded-pill px-3 text-danger"
+                                                    [disabled]="currentUser !== item.user_id">
+                                                    <i class="fa fa-trash me-2"></i>Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+
+                                <div class="col-12">
+                                    <pagination-controls class="pagination d-flex justify-content-center mt-5" (pageChange)="p = $event"></pagination-controls>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fruits Shop End-->
+
+    <!-- Single Page Header End -->
+
+    <!-- <div class="col-lg-3">
+    <div class="row g-4">
+        <div class="col-lg-12">
+            
+            <div *ngIf="selectedNews">
+             <h4><b>Title : </b> {{ selectedNews.title }}</h4>
+             <p> <b>Comment : </b> {{ selectedNews.comment }}</p>
+            </div>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,92 @@
+ <!-- Navbar start -->
+ <div class="container-fluid fixed-top">
+    <div class="container topbar bg-primary d-none d-lg-block">
+        <div class="d-flex justify-content-between">
+            <div class="top-info ps-2">
+                <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="https://www.google.com/maps/place/ESPRIT+Ecole+Sup%C3%A9rieure+Priv%C3%A9e+d'Ing%C3%A9nierie+et+de+Technologies/@36.8995333,10.1894433,18.92z/data=!4m6!3m5!1s0x12e2cb75abbb1733:0x557a99cdf6c13b7b!8m2!3d36.8991051!4d10.1892737!16s%2Fg%2F11dybgg6rl?entry=ttu" class="text-white"> 1, 2 rue André Ampère - 2083 - Pôle Technologique - El Ghazala.</a></small>
+                <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a class="text-white">Espreat.saccessgroup@gmail.com</a></small>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container px-0">
+        <nav class="navbar navbar-light bg-white navbar-expand-xl">
+            <a routerLink="" class="navbar-brand"><h1 class="text-primary display-6">ESPREAT</h1></a>
+            <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-primary"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a routerLink="/restaurants" class="nav-item nav-link">Restaurants</a>
+                    <div class="nav-item dropdown">
+                        <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
+                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                            <a routerLink="/news" class="nav-item nav-link active">All News</a>
+                            <a routerLink="/addNews" class="dropdown-item">Add News</a>
+                        </div>
+                    </div>
+                    <!-- <div class="nav-item dropdown">
+                        <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Allergy</a>
+                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                            <a routerLink="add-allergie" class="dropdown-item">Add</a>
+                            <a routerLink="show-allergie" class="dropdown-item">ShowAllergy</a>
+                         
+                        </div>
+                    </div> -->
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events</a>
+                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                            <a routerLink="listevent"   class="nav-item nav-link active">All Events</a>
+                            
+                            <!-- <a routerLink="addevent" *ngIf="isAdminOrRestaurant()" class="dropdown-item">Add Events</a>
+                            <a routerLink="listbackevent" *ngIf="isAdmin()" class="dropdown-item">Back Events</a> -->
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Feedbacks</a>
+                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                            <a routerLink="usercrud-feedback" class="dropdown-item">My Feedbacks</a>
+                            <a routerLink="user-feedback" class="dropdown-item">Display All Feedbacks</a>
+                            <!-- <a routerLink="find-feedback" class="dropdown-item">Find Feedback</a> -->
+                        </div>
+                    </div>
+                    <a routerLink="forum" class="nav-item nav-link">Forum</a>
+                    <a routerLink="contact" class="nav-item nav-link">Contact</a>
+                </div>
+                <div class="d-flex m-3 me-0">
+                    <!-- search btn -->
+                    <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
+                   
+                    <!-- !!!!!!!!!!!!!!! don't touch this !!!!!!!!!!!!!!!!! -->
+                    <div style="visibility: hidden;">
+                        <mat-expansion-panel [expanded]="dropdownVisible">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                <i class="fas fa-user fa-2x"></i>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <button mat-button >Profile</button>
+                            <button mat-button >Logout</button>
+                        </mat-expansion-panel>
+                    </div>
+                    <mat-expansion-panel [expanded]="dropdownVisible" style="position: absolute; right: 0;border: 1px solid #ffb524;box-shadow: none;">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title style="color: rgb(136, 189, 37);">
+                            <i class="fas fa-user fa-2x"></i>
+                            <p *ngIf="isLoggedIn()" style="padding-top: 20px; padding-left: 15px;color: black;"> {{firstName}} </p>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div style="display: block;">
+                            <!-- <button mat-button style="display: block;margin-top: 10px;" class="btn border border-secondary rounded-pill px-3" (click)="userInfo()">Profile</button> -->
+                            <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="navigate('show-allergie')" *ngIf="isLoggedIn()" >Allergies</button>
+                            <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="logout()" *ngIf="isLoggedIn()" >Log out</button>
+                            <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="login()" *ngIf="!isLoggedIn()" >Log In</button>
+                            <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="navigate('register')" >Register</button>
+                        </div>
+                    </mat-expansion-panel>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->

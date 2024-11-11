@@ -1,0 +1,31 @@
+.image-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    height: 500px; /* Set the desired height of the container */
+}
+
+.facebook-post-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%; /* Make the image take up the full height of its container */
+}
+.intro-text {
+    text-align: center;
+    padding-top: 40%; /* Adjusted padding for more space */
+    background-image: url('src/assets/img/Restaurant-Stock-Images-e1699951587809.webp');
+    background-size: cover;
+    background-position: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 50px 0; /* Adjust the padding as needed */
+    margin-top: 150px; /* Adjusted margin for more space */
+  }
+  
+  .intro-lead-in {
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+  

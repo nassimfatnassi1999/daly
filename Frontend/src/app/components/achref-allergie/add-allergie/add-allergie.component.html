@@ -1,0 +1,60 @@
+    <!-- Single Page Header start -->
+
+    <!-- Single Page Header End -->
+
+
+    <!-- ********************************************************************************************** -->
+
+
+
+  <div class="container-fluid page-header py-5" id="achref">	
+    <div class="col-md-8 col-sm-12" style="margin: auto;">				                
+        <div class="well" > 
+            <form  [formGroup]="allergieForm" >
+            <h4>Add new allergie</h4>
+                <div class="input-group text-center">
+                    <input type="text" formControlName="name" placeholder="Enter the name of allergy" class="form-control input-lg" name="allergyname"  [ngClass]="{'is-invalid': allergieForm.get('name')?.touched && allergieForm.get('name')?.invalid}">      
+                    <div class="invalid-feedback">
+                        <span *ngIf="allergieForm.get('name')?.invalid && allergieForm.get('name')?.touched">Invalid allergy name.</span>
+                    </div>    
+                    
+                </div>
+
+                <div class="input-group text-center" style="margin-top: 20px;">
+                    <select class="form-select" aria-label=".form-select-sm example" formControlName="level" placeholder="Level"  [ngClass]="{'is-invalid': allergieForm.get('level')?.touched && allergieForm.get('level')?.invalid}">
+                        <option value="Light" >Light</option>
+                        <option value="Modern">Modern</option>
+                        <option value="Severe">Severe</option>   
+                    </select>
+                    <div class="invalid-feedback">
+                        <span *ngIf="allergieForm.get('level')?.invalid && allergieForm.get('level')?.touched">Invalid level</span>
+                    </div> 
+                    
+                    
+                </div>
+
+                <div class="input-group text-center" style="margin-top: 20px;">
+                    <input type="text" formControlName="dietry_restrictionsary" placeholder="Enter your dietry restrictionsary" class="form-control input-lg" [ngClass]="{'is-invalid': allergieForm.get('dietry_restrictionsary')?.touched && allergieForm.get('dietry_restrictionsary')?.invalid}">
+                    <div class="invalid-feedback">
+                        <span *ngIf="allergieForm.get('dietry_restrictionsary')?.invalid && allergieForm.get('dietry_restrictionsary')?.touched">Invalid dietry_restrictionsary.</span>
+                    </div> 
+                </div>
+                
+
+                <div class="input-group text-center" style="margin-top: 20px;"  >
+                    <input type="date" formControlName="date" class="form-control input-lg" class="form-control input-lg" [ngClass]="{'is-invalid': allergieForm.get('date')?.touched && allergieForm.get('date')?.invalid}">
+                    <div class="invalid-feedback">
+                        <span *ngIf="allergieForm.get('date')?.invalid && allergieForm.get('date')?.touched">Invalid date</span>
+                    </div> 
+                    
+                </div>
+
+                <div class="input-group text-center" style="margin-top: 20px;">
+                    <button type="button" class="btn btn-primary" (click)="addAllergie()"  [disabled]="allergieForm.invalid">Add</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    </div>

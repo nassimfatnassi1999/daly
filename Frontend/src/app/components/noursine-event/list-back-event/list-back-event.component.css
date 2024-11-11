@@ -1,0 +1,41 @@
+#bt{
+    color:#dc3545
+}
+.table-link.table-link.text-info {
+margin-right: 3px;
+
+
+}
+.btn-action.text-info {
+    margin-right: 3px;
+}
+.rectangular-image {
+    border-radius: 0;
+}
+.table th img, .table td img {
+    width: 80px;
+    height: 80px;
+}
+.table td img {
+    margin-right: 10px;
+}
+.event-details {
+  font-size: 16px;
+  padding: 20px;
+  text-align: center; /* Center-align all text */
+}
+
+.detail {
+  margin-bottom: 15px;
+  text-align: left; /* Align individual detail labels and values to the left */
+}
+
+.value {
+  margin-left: 10px;
+}
+
+.custom-swal-container {
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}

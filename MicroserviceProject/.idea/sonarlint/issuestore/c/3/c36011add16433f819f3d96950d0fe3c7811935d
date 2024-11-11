@@ -1,0 +1,30 @@
+
+|	java:S125)"<This block of commented-out lines of code should be removed.(ÉËœ”üÿÿÿÿJ$c8ae46d6-91f7-43a3-ad1e-0625ce8bb596
+r
+java:S16116"6Remove the parentheses around the "requests" parameter(¢ÌÀÈJ$9389b164-ea28-4d97-a265-6121ccc08748
+\
+java:S1128":Remove this unused import 'com.saccess.user.auth.JwtUtil'.(‚‚¦ºüÿÿÿÿ8Ğ½‰·°2
+h
+java:S1128"FRemove this unused import 'com.saccess.user.services.GestionUserImpl'.(¿ëï†ıÿÿÿÿ8Ñ½‰·°2
+T
+java:S1128"7Remove this unused import 'jakarta.persistence.Access'.(Í¢Ñ8Ñ½‰·°2
+u
+java:S1128	"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8Ò½‰·°2
+ƒ
+java:S1128"aRemove this unused import 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder'.(ëŒĞ™ÿÿÿÿÿ8Ó½‰·°2
+z
+java:S1128"^Remove this unused import 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'.(à¤‘`8Õ½‰·°2
+m
+java:S1128"KRemove this unused import 'org.springframework.security.config.Customizer'.(Ïóœ¬ùÿÿÿÿ8Õ½‰·°2
+
+java:S1128"lRemove this unused import 'org.springframework.security.config.annotation.web.configurers.LogoutConfigurer'.(º²ÀÙøÿÿÿÿ8æ¾‰·°2
+l
+java:S1128"ORemove this unused import 'org.springframework.security.core.userdetails.User'.(–Ä€8æ¾‰·°2
+ƒ
+java:S1128"aRemove this unused import 'org.springframework.security.provisioning.InMemoryUserDetailsManager'.(îŒúùÿÿÿÿ8ù¾‰·°2
+
+java:S1128"]Remove this unused import 'org.springframework.security.provisioning.JdbcUserDetailsManager'.(ˆâô úÿÿÿÿ8ú¾‰·°2
+s
+java:S1128"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥8û¾‰·°2
+S
+java:S1128 "1Remove this unused import 'javax.sql.DataSource'.(ÉòÂ¿úÿÿÿÿ8 ¿‰·°2

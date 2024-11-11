@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Update Event</h2>
+<div mat-dialog-content>
+    <form (ngSubmit)="updateEvent(eventId)">
+        <div class="form-group">
+          <label>Title:</label>
+          <input type="text" class="form-control" [(ngModel)]="updatedEvent.title" id="title" name="title">
+        </div>
+        <div class="form-group">
+          <label>Topic:</label>
+          <input type="text" class="form-control" [(ngModel)]="updatedEvent.topic" id="topic" name="topic">
+        </div>
+        <div class="form-group">
+          <label>Date:</label>
+          <input type="date" class="form-control" [(ngModel)]="updatedEvent.date" id="date" name="date" [min]="getTodayDate()">
+        </div>
+        <div class="form-group">
+          <label>Location:</label>
+          <input type="text" class="form-control" [(ngModel)]="updatedEvent.location" id="location" name="location">
+        </div>
+        <div class="form-group">
+          <label for="type">Type:</label>
+          <!-- Replace the text input with a dropdown menu -->
+          <select id="type" class="form-control" [(ngModel)]="updatedEvent.type" id="type" name="type">
+            <option value="NewMenuIdea">New Menu Idea</option>
+            <option value="CulinaryEvent">Culinary Event</option>
+            <option value="Tasting">Tasting</option>
+            <option value="SeasonalPromotion">Seasonal Promotion</option>
+            <option value="Awareness">Awareness</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()" style="margin-right: 10px; background-color: grey;">Close</button>
+          <button type="submit" class="btn btn-primary" (click)="updateEvent(eventId)" style="margin-right: 10px; background-color: #94cd2d; border-color: #94cd2d;">Update Event</button>
+
+        </div>
+      </form>
+</div>

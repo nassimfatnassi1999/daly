@@ -1,0 +1,16 @@
+<!-- restaurant-statistics.component.html -->
+
+<div *ngIf="bestSellingRestaurantData">
+    <h2>Best Selling Restaurant</h2>
+    <!-- Display statistics data for best-selling restaurant -->
+    <p>{{ bestSellingRestaurantData }}</p>
+    <!-- You can use this data to generate a chart -->
+  </div>
+  
+  <div *ngIf="mostOrderedDishData">
+    <h2>Most Ordered Dish</h2>
+    <!-- Display statistics data for most-ordered dish -->
+    <p>{{ mostOrderedDishData }}</p>
+    <!-- You can use this data to generate a chart -->
+  </div>
+  

@@ -1,0 +1,22 @@
+<div class="container" *ngIf="restaurant">
+    <h2>Restaurant Details</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Name:</strong> {{ restaurant?.name }}</p>
+            <p><strong>Category:</strong> {{ restaurant?.category }}</p>
+            <p><strong>Average Rating:</strong> {{ restaurant?.averageRating }}/5</p>
+            <p><strong>Wait Time:</strong> {{ restaurant?.waitTime }} minutes</p>
+            <p><strong>Contact Info:</strong> {{ restaurant?.contactInfo }}</p>
+            <p><strong>Delivery:</strong> {{ restaurant?.delivery ? 'Yes' : 'No' }}</p>
+            <p><strong>Total Orders:</strong> {{ restaurant?.total_orders }}</p>
+            <p><strong>Eco-Friendly:</strong> {{ restaurant?.isEcoFriendly ? 'Yes' : 'No' }}</p>
+        </div>
+        <div class="col-md-6">
+            <p><strong>Logo:</strong></p>
+            <img class="img-fluid" [src]="'assets/img/1.jpg'" alt="Restaurant Logo">
+            <button class="btn btn-secondary" (click)="goBack()">Go Back</button>
+
+           
+        </div>
+    </div>
+</div>

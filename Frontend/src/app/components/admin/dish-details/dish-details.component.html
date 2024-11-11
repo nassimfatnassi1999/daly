@@ -1,0 +1,18 @@
+<div style="margin-top: 200px;" class="container" *ngIf="dish">
+    <h2>Dish Details</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Name:</strong> {{ dish.name }}</p>
+            <p><strong>Description:</strong> {{ dish.description }}</p>
+            <p><strong>Price:</strong> {{ dish.price }}</p>
+            <p><strong>Category:</strong> {{ dish.category }}</p>
+        </div>
+        <div class="col-md-6">
+            <p><strong>Photo:</strong></p>
+            <img class="img-fluid" [src]="'assets/img/mlawishawarma.png'" alt="Dish Photo">
+        </div>
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-secondary" (click)="goBack()">Go Back</button>
+    </div>
+</div>

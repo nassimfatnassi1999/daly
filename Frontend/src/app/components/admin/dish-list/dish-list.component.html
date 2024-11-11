@@ -1,0 +1,42 @@
+
+<div style="margin-top: 200px;">
+  <div  class="container mt-5">
+    <h2>Dishes List</h2>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Orders</th>
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dish of dishes  | paginate :{itemsPerPage:6,currentPage:p}">
+          <td>{{ dish.name }}</td>
+          <td>{{ dish.category }}</td>
+          <td>{{ dish.price}}</td>
+          <td>{{ dish.orders }}</td>
+
+
+          <td>
+            <div class="btn-group" role="group">
+              <button class="btn-primary" (click)="showDishDetails(dish)">Show</button>
+              <button type="button" class="btn btn-warning"(click)="editDish(dish)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteDish(dish.id_dish)">Delete</button>
+            </div>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" (click)="createDish()">Create New</button>
+
+  </div>
+  
+</div>
+<pagination-controls class="pagination d-flex justify-content-center mt-5" (pageChange)="p = $event"></pagination-controls>

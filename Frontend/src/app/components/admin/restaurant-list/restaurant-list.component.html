@@ -1,0 +1,67 @@
+<div style="margin-top: 200px;" >
+  <div class="container mt-5">
+    <h2>Restaurant List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Total Orders</th>
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restaurant of restaurants | paginate :{itemsPerPage:6,currentPage:p}">
+          <td>{{ restaurant.name }}</td>
+          <td>{{ restaurant.category }}</td>
+          <td>{{ restaurant.total_orders }}</td>
+
+          <td>
+            <div class="btn-group" role="group">
+              <button class="btn-primary" (click)="showRestaurantDetails(restaurant)">Show</button>
+              <button type="button" class="btn btn-warning" (click)="editRestaurant(restaurant)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteRestaurant(restaurant.id_restaurant)">Delete</button>
+             <button type="button" class="btn btn-warning"(click)="addDish(restaurant)">Add Dish</button> 
+
+            </div>
+              <!-- add button -->
+             <!-- <a href="#" class="table-link secondary" [routerLink]="'/admin/restaurants/'+restaurant.id_restaurant+'/addDish'">
+                <span class="fa-stack">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                </span>
+            </a> -->
+            
+           
+              <!-- <a class="table-link danger" (click)="deleteRestaurant(restaurant.id_restaurant)">
+                  <span class="fa-stack">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a> -->
+                    <!-- details button -->
+                    <!-- <a href="#" class="table-link text-warning" [routerLink]="'/admin/restaurants/' + restaurant.id_restaurant">
+                      <span class="fa-stack">
+                          <i class="fa fa-square fa-stack-2x"></i>
+                          <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a> -->
+                     <!-- update button -->
+              <!-- <a class="table-link text-info" [routerLink]="'/admin/restaurants/edit/' + restaurant.id_restaurant">
+                <span class="fa-stack">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                </span>
+            </a> -->
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-primary"(click)="createRestaurant()">Create New</button>
+
+  </div>
+  
+</div>
+<pagination-controls class="pagination d-flex justify-content-center mt-5" (pageChange)="p = $event"></pagination-controls>

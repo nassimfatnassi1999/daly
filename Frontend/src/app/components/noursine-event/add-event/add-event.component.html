@@ -1,0 +1,59 @@
+   <!-- Single Page Header start -->
+<!-- Single Page Header start -->
+<div class="container-fluid  py-5">
+
+</div>
+<!-- Single Page Header End -->
+<!-- Single Page Header End -->
+
+<!-- ********************************************************************************************** -->
+<!-- event-add.component.html -->
+
+<div class="container">
+    <h2>Add A New Event</h2>
+    <!-- <form [formGroup]="eventForm" enctype="multipart/form-data" (ngSubmit)="addEvent()"> -->
+
+    <form [formGroup]="eventForm" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" class="form-control" formControlName="title"   placeholder="Enter the title of the event " [ngClass]="{'is-invalid': eventForm.get('title')?.touched && eventForm.get('title')?.invalid}"> 
+      </div>
+
+      <div class="mb-3">
+        <label for="topic" class="form-label">Topic:</label>
+        <input type="text" id="topic" class="form-control" formControlName="topic"   placeholder="Enter the topic of the event " [ngClass]="{'is-invalid': eventForm.get('topic')?.touched && eventForm.get('topic')?.invalid}">
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date:</label>
+        <input type="date" id="date" class="form-control" formControlName="date" [(ngModel)]="eventDate" name="eventDate" [min]="minDate" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="type" class="form-label">Event Type:</label>
+        <select id="type" class="form-select" formControlName="type" required
+                [ngClass]="{'is-invalid': eventForm.get('type')?.touched && eventForm.get('type')?.invalid}">
+            <option value="" disabled selected>Select event type</option>
+            <option value="NewMenuIdea">New Menu Idea</option>
+            <option value="CulinaryEvent">Culinary Event</option>
+            <option value="Tasting">Tasting</option>
+            <option value="SeasonalPromotion">Seasonal Promotion</option>
+            <option value="Awareness">Awareness</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    
+      
+      <div class="mb-3">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" id="location" class="form-control" formControlName="location"   placeholder="Enter the location the event " [ngClass]="{'is-invalid': eventForm.get('location')?.touched && eventForm.get('location')?.invalid}">
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Image:</label>
+        <input type="file" id="image" class="form-control" (change)="onFileSelected($event)" required>
+        <small class="form-text text-muted">Choose an image file (JPEG, PNG, GIF, etc.)</small>
+    </div>
+    
+      <button type="submit" class="btn btn-primary" (click)=" addEvent()">Add</button>
+   
+    </form>
+  </div>

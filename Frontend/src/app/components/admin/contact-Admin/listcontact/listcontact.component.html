@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<div class="content-wrapper">
+    <div class="row">
+      <div class="col-lg-10 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title"> Table Contact</h4>
+            <p class="card-description">
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>UserName</th>
+                  <th>Email</th>
+                  <th>Sented</th>
+                  <th>Description</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor=" let c of  contactTab ">
+                <tr>
+                  <td>{{c.name}}</td>
+                  <td>{{c.mail}}</td>
+                  <td>{{c.date}}</td>
+                  <td>{{c.message}}</td>
+
+                  <td><a class="table-link danger" (click)="deleteContact(c.id_Contact)">
+                    <span class="fa-stack">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a> </td>
+                </tr>
+            </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>

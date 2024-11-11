@@ -1,0 +1,9 @@
+
+‘	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÁªøÿÿÿÿJ$30d6b15b-247e-44aa-a966-0ad44a12660f
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²¶êJ$42daea74-215f-4522-8041-0bc22ebd0bfd
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$ea3cdcc3-4ad4-4f42-bbde-ccfd0ac4d538
+
+java:S1128	"RRemove this unused import 'com.saccess.feedBack.repositories.IFeedBackRepository'.(ñø÷ºJ$eea35db7-a0c0-4617-bf12-067bdcef60f7
+’
+java:S1128"QRemove this unused import 'org.springframework.format.annotation.DateTimeFormat'.(‡ˆôƒøÿÿÿÿJ$85738cad-ec24-463c-8656-087487fa75e8

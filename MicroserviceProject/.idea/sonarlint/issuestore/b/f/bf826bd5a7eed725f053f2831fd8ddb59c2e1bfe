@@ -1,0 +1,16 @@
+
+m	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Éıİ¹8‡¬µ±2
+n	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤äµ‰8ˆ¬µ±2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¥ı§¬ùÿÿÿÿ8¬µ±2
+_
+java:S6813$"BRemove this field injection and use constructor injection instead.(êæÄŞ8«¬µ±2
+]	java:S125-"<This block of commented-out lines of code should be removed.(•·Êúşÿÿÿÿ8İ¬µ±2
+H	java:S106§"+Replace this use of System.out by a logger.(ÈÉ—8…¯µ±2
+c
+java:S1128"ARemove this unused import 'org.springframework.http.HttpHeaders'.(ãŸñ×úÿÿÿÿ8¯µ±2
+a
+java:S1128"?Remove this unused import 'org.springframework.http.MediaType'.(úŸİ¯şÿÿÿÿ8“¯µ±2
+V
+java:S1128":Remove this unused import 'java.io.ByteArrayOutputStream'.(Î‡È8–¯µ±2
+Q
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8—¯µ±2

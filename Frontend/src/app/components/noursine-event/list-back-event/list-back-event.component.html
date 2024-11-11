@@ -1,0 +1,127 @@
+
+<!-- Single Page Header End -->
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<div class="container-fluid py-5">
+    <h2 class="text-center">List of Events</h2>
+</div>
+
+<div class="container-fluid py-5">
+    
+    <div class="container bootstrap snippets bootdey" id="getFeedTab">
+        <div class="row">
+
+            <form class="d-flex align-items-center h-100" >
+            <div class="col-lg-12">
+               
+<!-- 
+                        <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                     [(ngModel)]="searchTerm" type="search" placeholder="Search Here..."> -->
+            
+           
+                <div class="main-box no-header clearfix">
+                    <div class="main-box-body clearfix">
+                        <div class="table-responsive">
+                            <table class="table user-list">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><span>User</span></th>
+                                        <th scope="col"><span>Email</span></th>
+                                        <th scope="col"><span>Title</span></th>
+                                        <th class="text-center" scope="col"><span>Topic</span></th>
+                                        <th scope="col"><span>Date</span></th>
+                                        <th scope="col"><span>Event Type</span></th> 
+                                        <th scope="col"><span>Location</span></th>
+                                      
+                                        <th scope="col"><span>Image</span></th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let f of events  | paginate:{itemsPerPage:3, currentPage:p}">
+                                        <!-- image and name user -->
+                                        <td>
+                                            <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                            <span class="user-link">{{f.user.firstName}}</span>
+                                        </td>
+                                        <!-- email user -->
+                                        <td>
+                                            <a href="">{{f.user.email}}</a>
+                                        </td>
+                                        <!-- event title  -->
+                                        <td>{{f.title}}</td>
+                                        <!-- event topic -->
+                                        <td class="text-center">
+                                            <span class="label label-default">{{f.topic}}</span>
+                                        </td>
+                                        <!-- event date -->
+                                        <td>{{f.date}}</td>
+
+                                        <!-- event type -->
+                                        <td>{{f.type}}</td>
+                                        <!-- event location -->
+                                        <td>{{f.location}}</td>
+                                        <!-- event image -->
+                                        <td>
+                                            <!-- Affichage de l'image de l'événement -->
+                                            <img src="{{ f.image.imageURL }}"  alt="Event Image">
+                                          </td>
+                                        <!-- Actions -->
+                                        
+                                        <td style="width: 20%;">
+
+                                            
+                                            
+                                            <!-- yellow button -->
+                                            <button class="btn-action text-info" (click)="showEventDetails(f)" >
+                                               
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </button>
+                                            <!-- <a [routerLink]="['/admin/detail', f.id_event]" class="table-link text-warning">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a> -->
+                                            <!-- update button -->
+                                            <!-- <a (click)="showUpdatePopup(f.id_event)" class="table-link text-info">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a> -->
+                                          
+                                            <button (click)="openUpdateModal(f.id_event)" class="table-link text-info">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </button>
+                                            <!-- delete button -->
+                                            <button class="table-link danger" id="bt"(click)=" deleteEvent(f.id_event)" >
+                                                <span class="fa-stack">
+                                                  <i class="fa fa-square fa-stack-2x"></i>
+                                                  <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row justify-content-center mt-3">
+                                                
+                            <pagination-controls class="pagination" (pageChange)="p=$event"></pagination-controls>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+        </form> </div>
+    </div>
+
+
+</div>

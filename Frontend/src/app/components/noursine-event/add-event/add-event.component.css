@@ -1,0 +1,10 @@
+/* Ajoute une bordure rouge autour des champs invalides */
+.input-group input.ng-invalid {
+    border-color: red;
+  }
+  
+  /* Affiche les messages d'erreur en rouge */
+  .invalid-feedback {
+    color: red;
+  }
+  

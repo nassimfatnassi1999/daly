@@ -1,0 +1,57 @@
+<!-- menu.component.html -->
+
+<section style="padding-top: 12em;" id="menu" class="menu section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Menu</h2>
+      <p>Check Our Tasty Menu</p>
+    </div>
+    <button role="button" mat-icon-button class="button-3" (click)="goBack()"> Go back </button>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <!-- <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort by
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li (click)="sortByPrice('asc')">Price: Low to High</li>
+            <li (click)="sortByPrice('desc')">Price: High to Low</li>
+          </ul>
+        </div>
+      </div> -->
+
+        <ul id="menu-flters">
+          <li (click)="filterDishes('all')" [class.filter-active]="selectedCategory === 'all'">All</li>
+          <li (click)="filterDishes('Malfouf')" [class.filter-active]="selectedCategory === 'Malfouf'">Malfouf</li>
+          <li (click)="filterDishes('Mlawi')" [class.filter-active]="selectedCategory === 'Mlawi'">Mlawi</li>
+          <li (click)="filterDishes('Chapati')" [class.filter-active]="selectedCategory === 'Chapati'">Chapati</li>
+          <li (click)="filterDishes('Fricasse')" [class.filter-active]="selectedCategory === 'Fricasse'">Fricasse</li>
+          <li (click)="filterDishes('Crepe')" [class.filter-active]="selectedCategory === 'Crepe'">Crepe</li>
+          <li (click)="filterDishes('Pizza')" [class.filter-active]="selectedCategory === 'Pizza'">Pizza</li>
+          <li (click)="filterDishes('Makloub')" [class.filter-active]="selectedCategory === 'Makloub'">Makloub</li>
+          <li (click)="filterDishes('Sandwich')" [class.filter-active]="selectedCategory === 'Sandwich'">Sandwich</li>
+          <!-- Add more filter buttons for other categories -->
+        </ul>
+        <button mat-icon-button (click)="openOrderListDialog()" class="position-relative me-4 my-auto">
+          <i class="fa fa-shopping-bag fa-2x"></i>
+          <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">{{ shoppingCartCount }}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-6 menu-item filter-salads" *ngFor="let dish of dishes">
+        <ng-container *ngIf="selectedCategory === 'all' || dish.category === selectedCategory">
+          <img src="assets/img/mlawishawarma.png" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">{{ dish.name }}</a><span>{{ dish.price }} dt<button class="button-42" role="button" (click)="addToOrderList(dish)">+</button></span>
+          </div>
+          <div class="menu-ingredients">
+            {{ dish.description }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

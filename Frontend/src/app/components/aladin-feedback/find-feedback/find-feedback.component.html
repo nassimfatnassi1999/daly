@@ -1,0 +1,26 @@
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">Feedback</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a >ADD-FEEDBACK</a></li>
+           
+        </ol>
+    </div>
+    <!-- Single Page Header End -->
+<form (ngSubmit)="search()" #searchForm="ngForm">
+    <label for="searchType">Type de recherche:</label>
+    <select id="searchType" name="searchType" [(ngModel)]="searchType">
+      <option value="byType">Par type</option>
+      <option value="byStatus">Par statut</option>
+    </select>
+    <label for="searchTerm">Terme de recherche:</label>
+    <input type="text" id="searchTerm" name="searchTerm" [(ngModel)]="searchTerm" required>
+    <button type="submit">Rechercher</button>
+</form>
+  
+  <div *ngIf=" searchResults">
+    <ul>
+      <li *ngFor="let result of  searchResults">|| Titre: {{ result.title }} || Statut: {{ result.status }} ||Type: {{ result.type }} || Description: {{ result.description }}||</li>
+    </ul>
+  </div>
+  

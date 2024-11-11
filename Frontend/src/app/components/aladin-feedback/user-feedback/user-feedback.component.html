@@ -1,0 +1,139 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+  <h1 class="text-center text-white display-6">Contact</h1>
+  <ol class="breadcrumb justify-content-center mb-0">
+      <li class="breadcrumb-item"><a >Home</a></li>
+      <li class="breadcrumb-item"><a >Feedback</a></li>
+      <li class="breadcrumb-item active text-white">Display feedback</li>
+  </ol>
+</div>
+<!-- Single Page Header End -->
+
+
+<!-- Single Page Content start -->
+<div class="container-fluid py-5">
+
+  <div class="container bootstrap snippets bootdey" id="getFeedTab">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+
+                    <!-- Ajoutez ces éléments de filtrage au-dessus du tableau -->
+                    <form (ngSubmit)="search()" #searchForm="ngForm" class="mb-3">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="searchType">Type de recherche:</label>
+                                <select id="searchType" name="searchType" [(ngModel)]="searchType" class="form-control">
+                                    <option value="byType">Par type</option>
+                                    <option value="byStatus">Par statut</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="searchTerm">Terme de recherche:</label>
+                                <select id="searchTerm" name="searchTerm" [(ngModel)]="searchTerm" required class="form-control">
+                                    <ng-container *ngIf="searchType === 'byType'">
+                                        <option value="Complaint">Complaint</option>
+                                        <option value="Suggestion">Suggestion</option>
+                                        <option value="Cheer">Cheer</option>
+                                    </ng-container>
+                                    <ng-container *ngIf="searchType === 'byStatus'">
+                                        <option value="Open">Open</option>
+                                        <option value="UnderReview">UnderReview</option>
+                                        <option value="Closed">Closed</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <button type="submit" class="btn btn-primary mt-4">Rechercher</button>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <button type="button" class="btn btn-secondary mt-4" (click)="refresh()">Actualiser</button>
+                            </div>
+                            
+                        </div>
+                    </form>
+
+
+                    <div class="table-responsive">
+                        <table class="table user-list" >
+                            <thead>
+                                <tr>
+                                    <th scope="col"><span>User</span></th>
+                                    <th scope="col"><span>Email</span></th>
+                                    <th scope="col"><span>Title</span></th>
+                                    <th class="text-center" scope="col"><span>Status</span></th>
+                                    <th scope="col"><span>Type</span></th> 
+                                    <th scope="col"><span>Description</span></th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngIf="searchResults.length > 0; else allFeedbacks">
+                                    <tr *ngFor="let f of searchResults">
+                                        <!-- image and name user -->
+                                        <td>
+                                            <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                            <a class="user-link">Alaa</a>
+                                        </td>
+                                        <!-- email user -->
+                                        <td>
+                                            <a href="">ESPREAT@esprit.tn</a>
+                                        </td>
+                                        <!-- feedback title  -->
+                                        <td>{{f.title}}</td>
+                                        <!-- feedback status -->
+                                        <td class="text-center">
+                                            <span class="label label-default">{{f.status}}</span>
+                                        </td>
+                                        <!-- feedback type -->
+                                        <td>{{f.type}}</td>
+                                        <!-- feedback description -->
+                                        <td>{{f.description}}</td>
+
+                                        <!-- Actions -->
+                                        
+                                    </tr>
+                                </ng-container>
+                                <ng-template #allFeedbacks>
+                                    <tr *ngFor="let f of feedbackTab | paginate: { itemsPerPage: 5, currentPage: currentPage }">
+                                        <!-- image and name user -->
+                                        <td>
+                                            <img src="https://bootdey.com/img/Content/user_1.jpg"alt="">
+                                            <a class="user-link">{{f.user.firstName}}</a>
+                                        </td>
+                                        <!-- email user -->
+                                        <td>
+                                            <a href="">{{f.user.email}}</a>
+                                        </td>
+                                        <!-- feedback title  -->
+                                        <td>{{f.title}}</td>
+                                        <!-- feedback status -->
+                                        <td class="text-center">
+                                            <span class="label label-default">{{f.status}}</span>
+                                        </td>
+                                        <!-- feedback type -->
+                                        <td>{{f.type}}</td>
+                                        <!-- feedback description -->
+                                        <td>{{f.description}}</td>
+
+                                     
+                                    </tr>
+                                </ng-template>
+                            </tbody>
+                        </table>
+                        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+</div>
+<!-- Single Page Content End -->

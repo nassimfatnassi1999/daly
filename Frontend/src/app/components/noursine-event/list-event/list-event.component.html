@@ -1,0 +1,57 @@
+<!-- Single Page Header start -->
+<div class="container-fluid  py-5">
+</div>
+<div class="container-fluid  py-5">
+</div>
+
+<!-- Single Page Header End -->
+<!-- Single Page Header End -->
+<div class="container-fluid py-5">
+    <h2 class="text-center">List of Events</h2>
+</div>
+<link rel="stylesheet" type="text/css" >
+<hr>
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="single-widget search">
+                <h3>Search</h3>
+                    <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                 [(ngModel)]="searchTerm" type="search" placeholder="Search Here...">
+            </div>
+            
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 mb-4" *ngFor="let event of filteredEvents  | paginate:{itemsPerPage:3, currentPage:p}" > <!-- Ajouter la classe mb-4 pour plus d'espace entre les colonnes -->
+                                    <div class="card mb-3" style="height: 100%;">
+                                        <img *ngIf="event.image?.imageURL" [src]="event.image.imageURL" (click)="gotodetail(event.id_event)" class="card-img-top" alt="Event Image" style="height: 200px; object-fit: cover;">
+                                        <div class="card-body" style="height: 100%;">
+                                            <h5 class="card-title" style="font-size: 1.25rem; margin-bottom: 0.5rem;"><strong>Title:</strong> {{ event.title }}</h5>
+                                            <p class="card-text" style="font-size: 1rem; margin-bottom: 0.25rem;"><strong style="color: #94cd2d">Topic:</strong> {{ event.topic }}</p>
+                                            <p class="card-text" style="font-size: 1rem; margin-bottom: 0.25rem;"><strong style="color: #94cd2d">Type Event:</strong> {{ event.type }}</p>
+                                            <p class="card-text" style="font-size: 1rem; margin-bottom: 0.25rem;"><strong style="color: #94cd2d">Date:</strong> {{ event.date }}</p>
+                                            <p class="card-text" style="font-size: 1rem; margin-bottom: 0.25rem;"><strong style="color: #94cd2d">Location:</strong> {{ event.location }}</p>
+                                            <button type="submit" class="btn btn-primary" (click)="gotodetail(event.id_event)" style="color: white;">Details</button>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3">
+                                                
+                                <pagination-controls class="pagination" (pageChange)="p=$event"></pagination-controls>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

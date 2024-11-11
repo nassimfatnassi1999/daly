@@ -1,0 +1,18 @@
+<!-- order-list-dialog.component.html -->
+<div class="order-list-dialog">
+  <button type="button" class="btn-close close-button" aria-label="Close" (click)="closeDialog()"></button>
+  <h2 class="dialog-title">Your Order List</h2>
+  <ul class="list-group order-list">
+    <ng-container *ngFor="let item of summarizeItems(data); let i = index">
+      <li class="list-group-item order-item d-flex justify-content-between align-items-center">
+        <span>{{ item.count }} x {{ item.name }}</span>
+        <span class="badge bg-secondary item-price">{{ item.totalPrice }} dt</span>
+        <button type="button" class="btn btn-danger remove-button" (click)="removeItem(i)">
+          <i class="bi bi-trash"></i>
+        </button>
+      </li>
+    </ng-container>
+    <li class="list-group-item total-price">Total: {{ calculateTotalPrice() }} dt</li>
+    <li class="list-group-item center-button"><button type="button" class="btn btn-primary" (click)="createOrder()">Order Now</button></li>
+  </ul>
+</div>

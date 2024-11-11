@@ -1,0 +1,44 @@
+.topic-title {
+  font-family: 'Arial', sans-serif; /* You can change the font according to your preferences */
+  font-size: 24px; /* Font size of topic titles */
+  font-weight: bold;
+  color: #18534F; /* Text color */
+  margin-bottom: 10px; /* Margin at the bottom to separate titles */
+  border-bottom: 2px solid #226D68; /* Bottom border */
+  padding-bottom: 0px; /* Space below the border */
+}
+
+.card h5 {
+  font-size: 16px; /* Adjust the font size of post titles within cards */
+}
+.card .text-sm {
+  font-size: 14px; /* Adjust the font size of the smaller text */
+}
+.card {
+  box-shadow: 0 4px 6px rgba(0,0,0,.1); /* Adjust the values for a darker shadow */
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  text-align: center;
+  padding-top: 40%; /* Adjusted padding for more space */
+  background-image: url('src/assets/img/Restaurant-Stock-Images-e1699951587809.webp');
+  background-size: cover;
+  background-position: center;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 50px 0; /* Adjust the padding as needed */
+  margin-top: 150px; /* Adjusted margin for more space */
+}
+
+.intro-lead-in {
+  font-size: 30px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+
+
+
+

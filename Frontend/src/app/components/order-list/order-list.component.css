@@ -1,0 +1,55 @@
+/* order-list-dialog.component.css */
+.order-list-dialog {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.dialog-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.order-list {
+  list-style: none;
+  padding: 0;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-price {
+  font-weight: bold;
+}
+
+.remove-button {
+  background-color: transparent;
+  color: #ff4d4f;
+}
+
+.remove-button:hover {
+  color: #ff7875;
+}
+
+.total-price {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.center-button {
+  text-align: center;
+  margin-top: 20px;
+}

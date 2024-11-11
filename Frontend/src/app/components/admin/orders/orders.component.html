@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2 style="margin-top: 100px;">Orders List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th (click)="sortOrders('id_order')">ID</th>
+          <th (click)="sortOrders('totalPrice')">Price</th>
+          <th (click)="sortOrders('orderTime')">Order Time</th>
+          <th (click)="sortOrders('user')">User ID</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders  | paginate :{itemsPerPage:6,currentPage:p}">
+          <td>{{ order.id_order }}</td>
+          <td>{{ order.totalPrice }} dt</td>
+          <td>{{ order.orderTime }}</td>
+          <td>{{ order.user }}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-danger" (click)="deleteOrder(order.id_order)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<pagination-controls class="pagination d-flex justify-content-center mt-5" (pageChange)="p = $event"></pagination-controls>

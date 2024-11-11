@@ -1,0 +1,52 @@
+    <!-- Single Page Header start -->
+    <div class="container-fluid page-header py-5">
+       
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a ></a></li>
+           
+        </ol>
+    </div>
+    <!-- Single Page Header End -->
+
+
+    <!-- ********************************************************************************************** -->
+    <div class="text-center">
+        <div class="col-md-8 col-sm-12" style="margin: auto;">				                
+            <div class="well" > 
+                <h1 class="mt-5">ADD FEEDBACK</h1>
+    <form  [formGroup]="feedbackform" style="margin-top: 20px;">
+
+        <div class="input-group mb-3 ">
+            <input type="text" formControlName="title" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+            <p class="alert alert-danger" *ngIf="this.feedbackform.controls['title'].invalid &&
+            this.feedbackform.controls['title'].touched" >title is required</p>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" formControlName="status"  value="Open">
+        </div>
+        
+        <div class="input-group mb-3">
+            <select class="form-select" aria-label="Default select example" formControlName="type" placeholder="Type">
+                <option value="Complaint">Complaint</option>
+                <option value="Suggestion">Suggestion</option>
+                <option value="Cheer">Cheer</option>
+            </select>
+            <p class="alert alert-danger" *ngIf="this.feedbackform.controls['type'].invalid &&
+            this.feedbackform.controls['type'].touched" >type is required</p>
+
+        </div>
+
+        <div class="input-group mb-3">
+            
+            <input type="text" formControlName="description" class="form-control" placeholder="Description" aria-label="Description" aria-describedby="basic-addon1">
+            <p class="alert alert-danger" *ngIf="this.feedbackform.controls['description'].invalid &&
+            this.feedbackform.controls['description'].touched" >description is required</p>
+        </div>
+    
+        <button type="button" class="btn btn-primary" (click)="addfeedback()">Add Feedback</button>
+    </form>
+</div>
+    
+    <!-- ******************************************************************** -->
+    
+    

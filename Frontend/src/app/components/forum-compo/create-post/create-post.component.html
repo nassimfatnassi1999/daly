@@ -1,0 +1,51 @@
+<!-- Single Page Header start -->
+<header class="intro-text">
+  <div class="container">
+    <div class="intro-lead-in">Exploration Culinaire</div>
+    <div class="intro-lead-in">Partagez Vos Découvertes et Expériences Gourmandes!</div>
+    <!-- Add your button or any additional content here -->
+  </div>
+</header>
+  <!-- Single Page Header End -->
+  
+  <br>
+  <form (submit)="onSubmit()" class="form-container" enctype="multipart/form-data" #postForm="ngForm" style="font-size: medium;">
+    <div class="form-group">
+      <label for="postTitle">Post Title:</label>
+      <input type="text" id="postTitle" name="postTitle" [(ngModel)]="postTitle" class="form-control" placeholder="Enter post title..." required
+        #postTitleInput="ngModel" (blur)="postTitleInput.control.markAsTouched()">
+      <div *ngIf="postForm.controls['postTitle'].invalid && postTitleInput.control.touched">
+        <small class="text-danger">Post title is required</small>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="postContent">Write your post:</label>
+      <textarea id="postContent" name="postContent" rows="5" cols="50" [(ngModel)]="postContent" class="form-control" placeholder="Write your post content here..." required
+        #postContentInput="ngModel" (blur)="postContentInput.control.markAsTouched()">
+      </textarea>
+      <div *ngIf="postForm.controls['postContent'].invalid && postContentInput.control.touched">
+        <small class="text-danger">Post content is required</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="photoUpload">Upload Photo:</label>
+      <input type="file" id="photoUpload" name="photoUpload" class="form-control-file" accept="image/*" (change)="onPhotoSelected($event)">
+    </div>
+    <div class="form-group">
+      <label for="topic">Choose a topic:</label>
+      <select id="topic" name="topic" [(ngModel)]="selectedTopic" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
+        <option value="" disabled selected>Choose topic</option>
+        <option value="AVIS_RESTAURANTS">Avis sur les restaurants</option>
+        <option value="BONS_PLANS_ETUDIANTS">Bons plans étudiants</option>
+        <option value="EVENEMENTS_RENCONTRES">Événements et rencontres</option>
+        <option value="CUISINE_RECETTES">Cuisine et recettes</option>
+      </select>
+    </div>
+    <div class="button-container" >
+      <button type="submit" class="btn btn-primary" [disabled]="!postTitle || !postContent || !selectedTopic" >Submit</button>
+      <button type="button" class="btn btn-secondary" routerLink="/forum">Cancel</button>
+    </div>
+  </form>
+  

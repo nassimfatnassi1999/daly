@@ -1,0 +1,72 @@
+<!-- ********************************************************************************************** -->
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<!-- Single Page Header start -->
+ <div  id="achref">
+   <div class="container bootstrap snippets bootdey" >
+       <div class="row">
+           <div class="col-lg-12">
+               <div class="main-box no-header clearfix">
+                   <div class="main-box-body clearfix">
+                        <div class="table-responsive">
+                            <!-- search -->
+                            <div class="search-field d-none d-md-block">
+                                <form class="d-flex align-items-center h-100"  #searchForm="ngForm">
+                                    <div class="input-group">
+                                        <!-- <div class="input-group-prepend bg-transparent">
+                                            <i class="input-group-text border-1 mdi mdi-magnify"></i>
+                                        </div> -->
+                                        <input type="search" class="form-control bg-transparent border-1" placeholder="Search" name="searchTerm">
+                         
+                                    </div>
+                                </form>
+                            </div>
+                            <div style="margin-top: 0.5em; margin-bottom: 0.5em;">
+                                <button id="add-task" class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" (click)="addUser()">+ Add User</button>
+                            </div>
+                           <table class="table user-list">
+                               <thead>
+                                   <tr>
+                                   <th scope="col"><span>ID</span></th>
+                                   <th scope="col"><span>Email</span></th>
+                                   <th scope="col"><span>First Name</span></th>
+                                   <th scope="col"><span>Last Name</span></th>
+                                   <th scope="col"><span>Role</span></th>
+                                   <th scope="col"><span>Password</span></th>
+                                   <th scope="col">Actions</th>
+                                </thead>
+                                <tbody >
+                                    <ng-container  *ngFor="let u of users">
+                                        <tr>
+                                            <td>{{u.id}}</td>
+                                            <td>{{u.email}}</td>
+                                            <td>{{u.firstName}}</td>
+                                            <td>{{u.lastName}}</td>
+                                            <td>{{u.role}}</td>
+                                            <td>
+                                                <a  class="table-link text-info " (click)="changePassword(u.id)"> 
+                                                    <span class="fa-stack">
+                                                        <i class="fa fa-square fa-stack-2x"></i>
+                                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="table-link danger">
+                                                    <span class="fa-stack">
+                                                        <i class="fa fa-square fa-stack-2x"></i>
+                                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                            </td>
+                                        </tr> 
+                                    </ng-container>       
+                                </tbody> 
+                           </table>
+                        </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>

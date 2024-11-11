@@ -1,0 +1,49 @@
+<!-- Single Page Header start -->
+<div class="container-fluid  py-5">
+</div>
+<!-- Single Page Header start -->
+<div class="container-fluid  py-5">
+
+</div>
+<!-- Single Page Header End -->
+<!-- Single Page Header End -->
+<div class="container-fluid py-5">
+    <h2 class="text-center">Details of Events</h2>
+</div>
+
+<link rel="stylesheet" type="text/css" >
+<hr>
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 mb-4" > <!-- Ajouter la classe mb-4 pour plus d'espace entre les colonnes -->
+                                    <div class="card mb-3" style="height: 100%;"> <!-- Définir une hauteur fixe pour la carte -->
+                                        <img *ngIf="event.image?.imageURL" [src]="event.image.imageURL" class="card-img-top" alt="Event Image" style="height: 200px; object-fit: cover;">
+                                        <div class="card-body" style="height: 100%;"> <!-- Définir une hauteur fixe pour le corps de la carte -->
+                                            <h5 class="card-title"><strong>Title:</strong>{{ event.title }}</h5>
+                                            <p class="card-text"><strong>Topic:</strong>{{ event.topic }}</p>
+                                            <p class="card-text"><strong>Type Event:</strong> {{ event.type }}</p>
+                                            <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+                                            <p class="card-text"><strong>Location:</strong> {{ event.location }}</p>
+                                            <canvas #qrcode width="200" height="200"></canvas>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="generatePDF()" style="color: white;">Download as PDF</button> 
+</div>
+
+
