@@ -8,7 +8,7 @@ import { DishOrder } from 'src/app/models/DishOrder';
   providedIn: 'root'
 })
 export class DishOrderService {
-  private baseUrl = 'http://57.152.59.225:9090/restaurant/orders';
+  private baseUrl = 'http://localhost:9090/restaurant/orders';
 
   constructor(private http: HttpClient) { }
 

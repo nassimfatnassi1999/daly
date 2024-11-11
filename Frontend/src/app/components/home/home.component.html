@@ -1,5 +1,5 @@
        <!-- Modal Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content rounded-0">
                 <div class="modal-header">
@@ -41,10 +41,6 @@
                                 <img src="../../../assets/img/lp2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <!-- <a href="#" class="btn px-4 py-2 text-white rounded">Vegtables</a> -->
                             </div>
-                            <div class="carousel-item rounded">
-                                <img src="../../../assets/img/teacher.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                <!-- <a href="#" class="btn px-4 py-2 text-white rounded">Vegtables</a> -->
-                            </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,7 +62,7 @@
 
 
     <!-- Fruits Shop Start-->
-    <!-- <div class="container-fluid fruite py-5">
+    <div class="container-fluid fruite py-5">
         <div class="container py-5">
             <div class="tab-class text-center">
                 <div class="row g-4">
@@ -80,7 +76,26 @@
                                     <span class="text-dark" style="width: 130px;">All Products</span>
                                 </a>
                             </li>
-                            
+                            <!-- <li class="nav-item">
+                                <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
+                                    <span class="text-dark" style="width: 130px;">Vegetables</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
+                                    <span class="text-dark" style="width: 130px;">Fruits</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
+                                    <span class="text-dark" style="width: 130px;">Bread</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
+                                    <span class="text-dark" style="width: 130px;">Meat</span>
+                                </a>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -290,7 +305,7 @@
                 </div>
             </div>      
         </div>
-    </div> -->
+    </div>
     <!-- Fruits Shop End-->
 
 
@@ -494,43 +509,38 @@
         </div>
     </div> -->
     <!-- Banner Section End -->
-    <!-- Fact Start -->
-    
-    <!-- Fact Start -->
+
 
     <!-- Bestsaler Product Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5" style="max-width: 700px;">
-                <h1 class="display-4">Bestseller Restaurants</h1>
-                <p>This list is one of most selling restaurants in our App!</p>
+                <h1 class="display-4">Bestseller Products</h1>
+                <p>This list is one of most selling products from our App!</p>
             </div>
             <div class="row g-4">
-                <ng-container *ngFor="let r of bestSellerRestaurant">
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="p-4 rounded bg-light">
-                            <div class="row align-items-center">
-                                <div class="col-6">
-                                    <img src="../../../assets/img/1.jpg" class="img-fluid rounded-circle w-100" alt="">
+                <div class="col-lg-6 col-xl-4">
+                    <div class="p-4 rounded bg-light">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <img src="../../../assets/img/best-product-1.jpg" class="img-fluid rounded-circle w-100" alt="">
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="h5">Organic Tomato</a>
+                                <div class="d-flex my-3">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
-                                <div class="col-6">
-                                    <a href="#" class="h5">{{r.name}}</a>
-                                    <div class="d-flex my-3">
-                                        <div *ngFor="let i of [1,2,3,4,5]">
-                                            <div *ngIf="i <= r.averageRating; then thenBlock else elseBlock"></div>
-                                            <ng-template #thenBlock><i class="fas fa-star text-primary"></i></ng-template>
-                                            <ng-template #elseBlock><i class="fas fa-star"></i></ng-template>
-                                        </div>
-                                    </div>
-                                    <!-- <h4 class="mb-3">3.12 $</h4> -->
-                                    <a [routerLink]="'/menu/'+r.id_restaurant" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Visit</a>
-                                </div>
+                                <h4 class="mb-3">3.12 $</h4>
+                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
                     </div>
-                </ng-container>
-                
-                <!-- <div class="col-lg-6 col-xl-4">
+                </div>
+                <div class="col-lg-6 col-xl-4">
                     <div class="p-4 rounded bg-light">
                         <div class="row align-items-center">
                             <div class="col-6">
@@ -634,17 +644,17 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <ng-container *ngIf="isLoggedIn()">
                     <div _ngcontent-ehr-c22="" class="row g-4">
                         <div _ngcontent-ehr-c22="" class="col-lg-4 text-start">
-                            <h1 _ngcontent-ehr-c22="">Our Recommended Products</h1>
+                            <h1 _ngcontent-ehr-c22="">Our Reccomanded Products</h1>
                         </div>
                     </div>
                     <ng-container *ngFor="let dish of reccomandedDishes">
                         <div class="col-md-6 col-lg-6 col-xl-3">
                             <div class="text-center">
-                                <img src="../../../assets/img/mlawishawarma.png" class="img-fluid rounded" alt="">
+                                <img src="../../../assets/img/fruite-item-1.jpg" class="img-fluid rounded" alt="">
                                 <div class="py-4">
                                     <a href="#" class="h5">{{dish.name}}</a>
                                     <div class="d-flex my-3 justify-content-center">
@@ -667,7 +677,44 @@
     <!-- Bestsaler Product End -->
 
 
-    
+    <!-- Fact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="bg-light p-5 rounded">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="counter bg-white rounded p-5">
+                            <i class="fa fa-users text-secondary"></i>
+                            <h4>satisfied customers</h4>
+                            <h1>1963</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="counter bg-white rounded p-5">
+                            <i class="fa fa-users text-secondary"></i>
+                            <h4>quality of service</h4>
+                            <h1>99%</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="counter bg-white rounded p-5">
+                            <i class="fa fa-users text-secondary"></i>
+                            <h4>quality certificates</h4>
+                            <h1>33</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="counter bg-white rounded p-5">
+                            <i class="fa fa-users text-secondary"></i>
+                            <h4>Available Products</h4>
+                            <h1>789</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fact Start -->
 
 
     <!-- Tastimonial Start -->
@@ -757,42 +804,6 @@
         </div>
     </div> -->
     <!-- Tastimonial End -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="bg-light p-5 rounded">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>satisfied customers</h4>
-                            <h1>1963</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>quality of service</h4>
-                            <h1>99%</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>quality certificates</h4>
-                            <h1>33</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="counter bg-white rounded p-5">
-                            <i class="fa fa-users text-secondary"></i>
-                            <h4>Available Products</h4>
-                            <h1>789</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
      <!-- Featurs Section Start -->
      <div class="container-fluid featurs py-5">
         <div class="container py-5">

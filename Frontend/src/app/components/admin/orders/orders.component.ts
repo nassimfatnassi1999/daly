@@ -13,7 +13,6 @@ export class OrdersComponent implements OnInit {
   orders: DishOrder[] = [];
   sortedColumn: string = '';
   isAscending: boolean = true;
-  p: number = 1;
 
   constructor(private toastr : ToastrService, private dishOrderService: DishOrderService) {}
 

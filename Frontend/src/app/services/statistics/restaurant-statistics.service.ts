@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class RestaurantStatisticsService {
 
-  private baseUrl = 'http://57.152.59.225:9090/restaurant'; // Your backend base URL
+  private baseUrl = 'http://localhost:9090/restaurant'; // Your backend base URL
 
   constructor(private http: HttpClient) { }
 

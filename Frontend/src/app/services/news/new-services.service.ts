@@ -13,13 +13,9 @@ import { StatBadWord } from 'src/app/models/StatBadWord';
 })
 export class NewServicesService {
 
-  // adresse du serveur Back.End
-
-  //zedna f application properties o na7ina cross m micro
-  // newsURL: string = "http://192.168.1.213:30779/apinassim/news"; 
-  // newsURL: string = "http://localhost:9090/apinassim/news";
-  newsURL: string = "http://57.152.59.225:9090/apinassim/news";
   
+  newsURL: string = "http://localhost:9090/news"; 
+
 
 
 

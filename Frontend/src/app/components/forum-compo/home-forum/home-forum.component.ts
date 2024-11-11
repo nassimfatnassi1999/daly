@@ -13,22 +13,16 @@ export class HomeForumComponent implements OnInit {
   latestPosts: ForumPost[] = []; // Add this property
   lastPostAuthorId: number= 0;
   activeMembersCount: number = 0;
-  currentPage: number = 1;
-  pageSize: number = 10; // Nombre de messages par page
-  totalPages: number = 0;
-
-
   constructor(private forumPostService: ForumServicesService) { }
 
   ngOnInit() {
-    this.currentPage = 1; // Initialisation de la page actuelle
-  this.getPosts(this.currentPage);
+    this.getPosts();
     this.getLatestPosts(); // Fetch latest posts
     this.getActiveMembersCount();
   }
 
-  getPosts(page: number) {
-    this.forumPostService.getForum(page, this.pageSize).subscribe((response) => {
+  getPosts() {
+    this.forumPostService.getForum().subscribe((response) => {
       console.log('Posts:', response);  
       this.PostsTab = response || [];
       this.PostsTab.forEach(post => {
@@ -102,17 +96,4 @@ export class HomeForumComponent implements OnInit {
     });
   }
  
-  prevPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.getPosts(this.currentPage);
-    }
-  }
-  
-  nextPage() {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage++;
-      this.getPosts(this.currentPage);
-    }
-  }
 }

@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let restaurant of restaurants | paginate :{itemsPerPage:6,currentPage:p}">
+        <tr *ngFor="let restaurant of restaurants">
           <td>{{ restaurant.name }}</td>
           <td>{{ restaurant.category }}</td>
           <td>{{ restaurant.total_orders }}</td>
@@ -64,4 +64,3 @@
   </div>
   
 </div>
-<pagination-controls class="pagination d-flex justify-content-center mt-5" (pageChange)="p = $event"></pagination-controls>

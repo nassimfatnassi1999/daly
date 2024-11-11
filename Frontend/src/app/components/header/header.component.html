@@ -6,7 +6,11 @@
                 <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="https://www.google.com/maps/place/ESPRIT+Ecole+Sup%C3%A9rieure+Priv%C3%A9e+d'Ing%C3%A9nierie+et+de+Technologies/@36.8995333,10.1894433,18.92z/data=!4m6!3m5!1s0x12e2cb75abbb1733:0x557a99cdf6c13b7b!8m2!3d36.8991051!4d10.1892737!16s%2Fg%2F11dybgg6rl?entry=ttu" class="text-white"> 1, 2 rue André Ampère - 2083 - Pôle Technologique - El Ghazala.</a></small>
                 <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a class="text-white">Espreat.saccessgroup@gmail.com</a></small>
             </div>
-            
+            <div class="top-link pe-2">
+                <a  class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
+                <a class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                <a class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
+            </div>
         </div>
     </div>
     <div class="container px-0">
@@ -81,7 +85,6 @@
                             <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="navigate('show-allergie')" *ngIf="isLoggedIn()" >Allergies</button>
                             <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="logout()" *ngIf="isLoggedIn()" >Log out</button>
                             <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="login()" *ngIf="!isLoggedIn()" >Log In</button>
-                            <button mat-button style="display: block;margin-top: 10px;font-family: 'Open Sans';" class="btn border border-secondary rounded-pill px-3" (click)="navigate('register')" >Register</button>
                         </div>
                     </mat-expansion-panel>
                 </div>

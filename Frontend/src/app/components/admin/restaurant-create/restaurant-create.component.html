@@ -10,6 +10,14 @@
   </div>
 
   <div class="mb-3">
+    <label for="logo" class="form-label">Logo:</label>
+    <input type="file" class="form-control" id="logo" name="logo" (change)="handleLogoInput($event)" accept="image/*">
+    <img id="logoPreview" [src]="restaurantForm.get('logo') ? 'assets/images/' + restaurantForm.get('logo') : ''" alt="Logo Preview" class="img-thumbnail" style="max-width: 200px; max-height: 200px;">
+    <div *ngIf="restaurantForm.get('logo')?.invalid && (restaurantForm.get('logo')?.dirty || restaurantForm.get('logo')?.touched)" class="text-danger">
+    </div>
+  </div>
+
+  <div class="mb-3">
     <label for="category" class="form-label">Category:</label>
     <select class="form-select" id="category" name="category" formControlName="category" [(ngModel)]="newRestaurant.category">
       <option *ngFor="let category of getCategoryKeys()" [value]="category">{{ category }}</option>

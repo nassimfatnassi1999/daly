@@ -16,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let dish of dishes  | paginate :{itemsPerPage:6,currentPage:p}">
+        <tr *ngFor="let dish of dishes">
           <td>{{ dish.name }}</td>
           <td>{{ dish.category }}</td>
           <td>{{ dish.price}}</td>
@@ -39,4 +39,3 @@
   </div>
   
 </div>
-<pagination-controls class="pagination d-flex justify-content-center mt-5" (pageChange)="p = $event"></pagination-controls>

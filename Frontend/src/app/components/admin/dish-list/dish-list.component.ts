@@ -16,7 +16,6 @@ export class DishListComponent implements OnInit {
   dishes: Dish[] = [];
 
   constructor(private dialog: MatDialog, private toastr: ToastrService, private dishService: DishService) {}
-  p: number = 1;
 
   ngOnInit(): void {
     this.loadDishes();
@@ -82,7 +81,10 @@ export class DishListComponent implements OnInit {
         <p><strong>Description:</strong> ${dish.description}</p>
         <p><strong>Price:</strong> ${dish.price}dt</p>
         <p><strong>Category:</strong> ${dish.category}</p>
-        <p><strong>Orders:</strong> ${dish.orders}</p>       
+        <p><strong>Category:</strong> ${dish.restaurant.name}</p>
+
+        <p><strong>Orders:</strong> ${dish.orders}</p>
+        
       </div>
     `;
 

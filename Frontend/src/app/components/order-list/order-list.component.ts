@@ -8,7 +8,6 @@ import { DishService } from 'src/app/services/dish/dish.service'; // Import Dish
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
-import { UserServicesService } from 'src/app/services/user/user-services.service';
 
 @Component({
     selector: 'app-order-list-dialog',
@@ -18,7 +17,6 @@ import { UserServicesService } from 'src/app/services/user/user-services.service
 export class OrderListComponent implements OnInit {
     @Output() orderPlaced: EventEmitter<void> = new EventEmitter<void>(); // Define event emitter
 
-    id_user!: number;
     id_restaurant!: number;
     data: any[] = [];
     newOrder: DishOrder = {
@@ -33,20 +31,17 @@ export class OrderListComponent implements OnInit {
         @Inject(MAT_DIALOG_DATA) public dialogData: any,
         private dialogRef: MatDialogRef<OrderListComponent>,
         private dishOrderService: DishOrderService,
-        private restaurantService: RestaurantService,
-        private us : UserServicesService, // Inject RestaurantService
+        private restaurantService: RestaurantService, // Inject RestaurantService
         private dishService: DishService, // Inject DishService
         private http: HttpClient,
         private router: Router,
-        private toastr : ToastrService,        
+        private toastr : ToastrService
     ) {
         this.data = dialogData.orderlist;
         this.id_restaurant = dialogData.id_restaurant;
     }
 
-    async ngOnInit() {
-        this.us.getCurrentUser().then(res => this.id_user = res!.id);
-    }
+    ngOnInit(): void {}
 
     summarizeItems(data: any[]): any[] {
         console.log(data);
@@ -96,7 +91,7 @@ export class OrderListComponent implements OnInit {
             return; // Exit the method if the order is empty
         }
     
-        this.newOrder.user = this.id_user;
+        this.newOrder.user = 1;
         this.newOrder.totalPrice = this.calculateTotalPrice();
     
         this.dishOrderService.createOrder(this.newOrder).subscribe((order: DishOrder) => {      

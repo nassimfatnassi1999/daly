@@ -9,7 +9,7 @@ import { FullResFeedback } from 'src/app/models/FullResFeedback';
   providedIn: 'root'
 })
 export class FeedbackServicesService {
-  feedbackURL: string="http://57.152.59.225:9090/apiala/feedback"
+  feedbackURL: string="http://localhost:9090/feedback"
 
   constructor(private httpClient:HttpClient) { }
   

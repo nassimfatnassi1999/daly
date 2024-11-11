@@ -7,7 +7,7 @@ import { Contact } from 'src/app/models/Allergy';
   providedIn: 'root'
 })
 export class ContactserviceService {
-  allergieURL: string ="http://57.152.59.225:9090/apiachref/Allergy";
+  allergieURL: string ="http://localhost:9090/apiachref/Allergy";
 
   constructor(
     private httpClient: HttpClient

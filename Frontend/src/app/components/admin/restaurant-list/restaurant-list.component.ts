@@ -14,7 +14,6 @@ import { RestaurantCreateComponent } from '../restaurant-create/restaurant-creat
 })
 export class RestaurantListComponent implements OnInit {
   restaurants: Restaurant[] = [];
-  p: number = 1;
 
   constructor(private dialog: MatDialog,private restaurantService: RestaurantService) {}
 

@@ -15,20 +15,17 @@
       <div class="col-md-12 col-lg-10 col-xl-8">
         <div class="card">
           <div class="card-body">
-            <h4 class="text-center mb-4 pb-2" style="font-family:Georgia ; font-size: x-large; color:dimgray;font-weight: bold; font-style: italic;">{{ post?.titlePost }}</h4> 
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex flex-start align-items-center">
-                <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="60" height="60" />
-                <div>
-                  <h6 style="font-size: larger; font-family: Georgia; font-weight: bold; color:#5D7052 ;">{{ fullName }}</h6>
-                  <p class="text-muted small mb-0">{{ post?.creationDatePost | date:'MMM d, y  h:mm a'}}</p>  
-                </div>
+            <h4 class="text-center mb-4 pb-2">{{ post?.titlePost }}</h4> <!-- Move the title here -->
+            <div class="d-flex flex-start align-items-center">
+              <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="60" height="60" />
+              <div>
+                <h6 class="fw-bold text-primary mb-1">{{ post?.auteurId }}</h6>
+                <p class="text-muted small mb-0">{{ post?.creationDatePost | date:'MMM d, y  h:mm a'}}</p>
               </div>
-              <i class="material-icons" style="cursor: pointer; color: #5D7052;" (click)="updatePost()">update</i> <!-- Bouton de mise à jour -->
             </div>
 
             <!-- Display the photo if available -->
-            <p #postContent class="mt-3 mb-4 pb-2" style="font-family: Courier; font-size: medium;">
+            <p #postContent class="mt-3 mb-4 pb-2">
               {{ post?.contentPost }}
             </p>
             <div *ngIf="post?.photoPost" class="image-container">
@@ -38,7 +35,7 @@
 
 <div class="small d-flex justify-content-between">
   <!-- Like/Dislike/Comment Section -->
-  <div class="d-flex align-items-center" style="font-size:small;">
+  <div class="d-flex align-items-center">
     <div class="d-flex align-items-center me-3" (click)="post && likePost(post.idPost)" [style.color]="isLikedByCurrentUser ? 'blue' : 'grey'" style="cursor: pointer;">
       <i class="far fa-thumbs-up me-2"></i>
       <p class="mb-0">Like</p>
@@ -54,16 +51,16 @@
   </div>
 
   <!-- Report/Delete Section -->
-  <div class="d-flex align-items-center" style="font-size:small;">
+  <div class="d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-center" style="cursor: pointer; margin-left: auto;" (click)="toggleReportAlert()">
       <i class="far fa-flag me-2" [ngClass]="{ 'text-warning': isReported }"></i>
       <p class="mb-0" [ngClass]="{ 'text-warning': isReported }">{{ isReported ? 'Report' : 'Report' }}</p>
     </div>
     <div class="d-flex align-items-center me-3" *ngIf="isPostOwner()" style="cursor: pointer; margin-left: auto;" (click)="deletePost()">
-      <i class="material-icons" style="color:rgb(189,49,0); margin-left: 10px; font-size: large;">delete</i>
+      <i class="material-icons" style="color:rgba(255, 0, 0, 0.788); margin-left: 10px;">delete</i>
     </div>
     <!-- Hidden alert/notification for reporting -->
-    <div  *ngIf="showReportAlert" class="alert alert-warning mt-3 position-fixed top-50 start-50 translate-middle" role="alert" style="z-index: 10000;">
+    <div *ngIf="showReportAlert" class="alert alert-warning mt-3 position-fixed top-50 start-50 translate-middle" role="alert" style="z-index: 10000;">
       <textarea class="form-control mb-2" placeholder="Reason" [(ngModel)]="reportReason"></textarea>
       <button class="btn btn-warning me-2" (click)="saveReport()">Save</button>
       <button class="btn btn-secondary" (click)="cancelReport()">Cancel</button>
@@ -79,7 +76,7 @@
               <div class="d-flex flex-start align-items-center mb-3">
                 <img class="rounded-circle shadow-1-strong me-3" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="40" height="40" />
                 <div>
-                  <h6 class="fw-bold text-primary mb-1" style="font-size: small;">{{ comment?.auteurId }}</h6>
+                  <h6 class="fw-bold text-primary mb-1">{{ comment?.auteurId }}</h6>
                   <p class="text-muted small mb-0">{{ comment?.creationDateComm | date:'MMM d, y  h:mm a'}}</p>
                 </div>
               </div>
@@ -99,7 +96,7 @@
                 </a>
                
                 <div class="d-flex align-items-center me-3" *ngIf="comment?.auteurId === userId && comment.idComm" style="cursor: pointer; margin-left: auto;" (click)="deleteComment(comment.idComm)">
-                  <i class="material-icons" style="color:rgb(189,49,0); margin-left: 10px; font-size: large;">delete</i>
+                  <i class="material-icons" style="color:rgba(255, 0, 0, 0.788); margin-left: 10px;">delete</i>
                 </div>
               </div>
               <hr /> <!-- Add a horizontal rule after each comment -->

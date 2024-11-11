@@ -1,0 +1,18 @@
+
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+\
+java:S1126%"AReplace this if-then-else statement by a single return statement.(„ö¿‘ûÿÿÿÿ
+Q
+java:S1128"6Remove this unused import 'lombok.AllArgsConstructor'.(´œ¾öùÿÿÿÿ
+l
+java:S1128"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥
+s
+java:S1128	"]Remove this unused import 'org.springframework.security.core.userdetails.UserDetailsService'.(¶…¥à
+
+java:S1128
+"dRemove this unused import 'org.springframework.security.core.userdetails.UsernameNotFoundException'.(Í£Ö¶ùÿÿÿÿ

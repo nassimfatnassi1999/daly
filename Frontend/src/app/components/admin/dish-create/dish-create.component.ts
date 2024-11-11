@@ -78,12 +78,7 @@ export class DishCreateComponent implements OnInit {
     if (this.dishForm.valid) {
       this.dishService.addDish(this.newDish).subscribe(() => {
         this.toastr.success("Dish Created Successfuly","success")
-        this.dialogRef.close();
-        console.log("el dish li tnsaaa");
-        
-        console.log(this.newDish);
-        
-
+        this.router.navigate(['/admin/dishes']);
       });
     } else {
       // Mark all fields as touched to display validation errors

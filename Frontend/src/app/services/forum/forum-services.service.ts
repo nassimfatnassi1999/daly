@@ -8,26 +8,22 @@ import { Observable, catchError, map, switchMap, throwError } from 'rxjs';
 })
 export class ForumServicesService {
 
-  forumURL: string ="http://57.152.59.225:9090/api/Post";
-  commURL: string ="http://57.152.59.225:9090/api/Commentaire";
-  reportURL: string ="http://57.152.59.225:9090/api/Report";
+  forumURL: string ="http://localhost:9090/api/Post";
+  commURL: string ="http://localhost:9090/api/Commentaire";
+  reportURL: string ="http://localhost:9090/api/Report";
 
 
   constructor(
     private httpClient: HttpClient
   ) {}
-  updatePost(post: ForumPost): Observable<ForumPost> {
-    const url = `${this.forumURL}/update`;
-    return this.httpClient.put<ForumPost>(url, post);
-  }
+  
 
   
-  getForum(page: number, pageSize: number): Observable<ForumPost[]> {
-    const startIndex = (page - 1) * pageSize;
-    const url = `${this.forumURL}/getall?page=${startIndex}&pageSize=${pageSize}`;
-    return this.httpClient.get<ForumPost[]>(url);
+  getForum(){
+    console.log("bonjour")
+    return this.httpClient.get<ForumPost[]>(this.forumURL+ "/getall");
+    
   }
-  
 
  
   getCommentsCountForPost(postId: number): Observable<number> {
@@ -55,7 +51,7 @@ export class ForumServicesService {
   }
 
   getPostById(postId: number): Observable<ForumPost> {
-    const url = `${this.forumURL}/getIdWithUser/${postId}`;
+    const url = `${this.forumURL}/getId/${postId}`;
     return this.httpClient.get<ForumPost>(url);
   }
 
@@ -179,10 +175,5 @@ deleteComment(commentId: number): Observable<void> {
 getActiveMembersCount(): Observable<number> {
   const url = `${this.forumURL}/getActiveMembersCount`; 
   return this.httpClient.get<number>(url);
-}
-getForumPostsPage(page: number, pageSize: number): Observable<ForumPost[]> {
-  const startIndex = (page - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-  return this.httpClient.get<ForumPost[]>(`/api/forum/posts?page=${startIndex}&pageSize=${pageSize}`);
 }
 }

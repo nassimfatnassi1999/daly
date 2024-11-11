@@ -9,7 +9,7 @@ import { UEvent } from 'src/app/models/UEvent';
 })
 export class EventservicesService {
 
-  eventURL: string = "http://57.152.59.225:9090/apinoursine/event"; 
+  eventURL: string = "http://localhost:9090/apinoursine/event"; 
   constructor(private httpClient: HttpClient) { }
   
 addEventWithImage(event:any, image:File): Observable<any> {

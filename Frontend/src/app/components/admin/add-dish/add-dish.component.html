@@ -25,7 +25,13 @@
     </div>
   </div>
   
- 
+  <div class="mb-3">
+    <label for="photo" class="form-label">Photo:</label>
+    <input type="file" class="form-control-file" id="photo" name="photo" formControlName="photo" (change)="handlePhotoInput($event)" accept="image/*" [(ngModel)]="newDish.photo" required>
+    <div *ngIf="dishForm.get('photo')?.invalid && (dishForm.get('photo')?.dirty || dishForm.get('photo')?.touched)" class="text-danger">
+      <div *ngIf="dishForm.get('photo')?.errors?.['required']">Photo is required.</div>
+    </div>
+  </div>
   
   <div class="mb-3">
     <img id="photoPreview" [src]="'assets/images/dishes/' + newDish.photo" alt="Photo Preview" class="img-thumbnail">

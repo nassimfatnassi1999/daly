@@ -11,7 +11,6 @@ import { UserServicesService } from '../user/user-services.service';
 })
 export class AuthInterceptorService implements HttpInterceptor {
   constructor(private dialog: MatDialog, private router: Router, private us : UserServicesService) {}
- 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
 

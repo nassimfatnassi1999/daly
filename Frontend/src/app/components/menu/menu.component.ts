@@ -39,12 +39,8 @@ export class MenuComponent implements OnInit {
 
   getDishes() {
     if (this.selectedCategory === 'all') {
-      this.restaurantService.getDishesByRestaurantId(1).subscribe(dishes => {
+      this.restaurantService.getDishesByRestaurantId(this.restaurantId).subscribe(dishes => {
         this.dishes = dishes;
-        console.log("el dishes");
-        
-        console.log(dishes);
-        
       });
     } else {
       this.restaurantService.getDishesByCategory(this.restaurantId, this.selectedCategory).subscribe(dishes => {

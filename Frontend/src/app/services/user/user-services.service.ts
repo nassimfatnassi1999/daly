@@ -12,9 +12,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class UserServicesService {
-  // readonly myUrl: string = "http://192.168.1.213:30779/user";
-  readonly myUrl: string = "http://57.152.59.225:9090/user";
-
+  readonly myUrl: string = "http://localhost:9090/user";
   constructor(private http: HttpClient, private dialog: MatDialog) {}
 
   async getCurrentUser(): Promise<User | undefined> {

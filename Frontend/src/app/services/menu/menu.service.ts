@@ -7,7 +7,7 @@ import { Dish } from '../../models/Dish';
   providedIn: 'root'
 })
 export class MenuService {
-  private apiUrl = 'http://57.152.59.225:9090/restaurant/dishes';
+  private apiUrl = 'http://localhost:9090/restaurant/dishes';
 
   constructor(private http: HttpClient) {}
 

@@ -35,22 +35,7 @@ export class PostComponent implements OnInit {
     private us : UserServicesService
   ) { }
 
-  updatePost(): void {
-    if (this.post) {
-      this.forumService.updatePost(this.post).subscribe(
-        updatedPost => {
-          console.log('Post updated successfully:', updatedPost);
-          // Mettez en œuvre toute logique nécessaire après la mise à jour du post
-        },
-        error => {
-          console.error('Error updating post:', error);
-          // Gérez l'erreur si nécessaire
-        }
-      );
-    } else {
-      console.error('No post to update');
-    }
-  }
+
   async ngOnInit() {
     await this.us.getCurrentUser().then((user) => {
       if(user){
@@ -82,14 +67,7 @@ export class PostComponent implements OnInit {
       }
     );
   }
-  get fullName(): string {
-    // Check if `post` or `post.user` is null using optional chaining
-    if (!this.post?.user) {
-      return '';
-    }
-    // Safely access `firstName` and `lastName`, defaulting to empty strings if they are nullish
-    return `${this.post.user.firstName || ''} ${this.post.user.lastName || ''}`;
-  }
+
   loadComments(): void {
     this.forumService.getCommentsForPost(this.postId).subscribe(
       comments => {
@@ -103,7 +81,6 @@ export class PostComponent implements OnInit {
       }
     );
   }
-  
   
 
   saveComment(): void {

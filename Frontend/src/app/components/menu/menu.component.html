@@ -43,7 +43,7 @@
     <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
       <div class="col-lg-6 menu-item filter-salads" *ngFor="let dish of dishes">
         <ng-container *ngIf="selectedCategory === 'all' || dish.category === selectedCategory">
-          <img src="assets/img/mlawishawarma.png" class="menu-img" alt="">
+          <img src="assets/img/best-product-1.jpg" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">{{ dish.name }}</a><span>{{ dish.price }} dt<button class="button-42" role="button" (click)="addToOrderList(dish)">+</button></span>
           </div>

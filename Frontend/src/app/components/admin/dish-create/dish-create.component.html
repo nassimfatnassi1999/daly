@@ -22,7 +22,15 @@
       <div *ngIf="dishForm.get('price')?.errors?.['min']">Price must be a positive number.</div>
     </div>
   </div>
- 
+  <div class="mb-3">
+    <label for="photo">Photo:</label>
+    <input type="file" class="form-control" id="photo" name="photo" (change)="handlePhotoInput($event)" accept="image/*" formControlName="photo">
+    <img id="photoPreview" [src]="newDish.photo ? 'assets/images/' + newDish.photo : ''" alt="Photo Preview" class="img-thumbnail" style="max-width: 200px; max-height: 200px;">
+    <div *ngIf="dishForm.get('photo')?.invalid && (dishForm.get('photo')?.dirty || dishForm.get('photo')?.touched)" class="text-danger">
+      <div *ngIf="dishForm.get('photo')?.errors?.['required']">Photo is required.</div>
+    </div>
+  </div>
+  
   <div class="mb-3">
     <label for="category">Category:</label>
     <select class="form-control" id="category" name="category" formControlName="category" [(ngModel)]="newDish.category">

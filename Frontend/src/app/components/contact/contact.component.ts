@@ -31,20 +31,22 @@ export class ContactComponent {
 
   addContact(){
     this.contactservice.addContact(this.contactFrom ).subscribe((res)=>{
-      console.log(res)},
+      console.log(res)
+    
+    this.Toast.fire({
+      icon: 'success',
+      title: 'Contact Added successfully'
+    });    
+    this.rt.navigate([""])
+  },
   (error) => {
     console.error("Error adding feedback:", error); // Gestion des erreurs
-    // this.Toast.fire({
-    //  icon: "error",
-    //  title: "Failed to add Contact"
-    // }); 
+    this.Toast.fire({
+     icon: "error",
+     title: "Failed to add Contact"
+    }); 
   }  
-);  
-this.Toast.fire({
-  icon: 'success',
-  title: 'Contact Added successfully'
-});    
-this.rt.navigate([""]) 
+);   
 }
 Toast = Swal.mixin({
   toast: true,

@@ -1,0 +1,62 @@
+
+t
+java:S22932"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ºöºıÿÿÿÿ
+t
+java:S2293?"YReplace the type specification in this constructor call with the diamond operator ("<>").(ì½—·ıÿÿÿÿ
+t
+java:S2293D"YReplace the type specification in this constructor call with the diamond operator ("<>").(×†¡ÿÿÿÿÿ
+t
+java:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(×†¡ÿÿÿÿÿ
+t
+java:S2293M"YReplace the type specification in this constructor call with the diamond operator ("<>").(×†¡ÿÿÿÿÿ
+t
+java:S2293Q"YReplace the type specification in this constructor call with the diamond operator ("<>").(×†¡ÿÿÿÿÿ
+t
+java:S2293W"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ºöºıÿÿÿÿ
+t
+java:S2293]"YReplace the type specification in this constructor call with the diamond operator ("<>").(×†¡ÿÿÿÿÿ
+t
+java:S2293j"YReplace the type specification in this constructor call with the diamond operator ("<>").(¢Û©ûÿÿÿÿ
+u
+java:S2293°"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ºöºıÿÿÿÿ
+u
+java:S2293½"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ºöºıÿÿÿÿ
+K
+java:S3740”"/Provide the parametrized type for this generic.(Ğç»ãûÿÿÿÿ
+K
+java:S3740¤"/Provide the parametrized type for this generic.(¹Ô•Õúÿÿÿÿ
+F
+java:S3740¯"/Provide the parametrized type for this generic.(”Ëñ
+K
+java:S3740º"/Provide the parametrized type for this generic.(Ø™Åıÿÿÿÿ
+^
+java:S1192<"HDefine a constant instead of duplicating this literal "message" 7 times.(·˜±´
+a
+java:S1192="FDefine a constant instead of duplicating this literal "token" 3 times.(§——–ıÿÿÿÿ
+]
+java:S1192;"GDefine a constant instead of duplicating this literal "status" 7 times.(‘Ïúª
+X
+java:S6813$"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813)"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813+"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813-"BRemove this field injection and use constructor injection instead.(êæÄŞ
+;
+java:S14521"&Remove usage of generic wildcard type.(êçİL
+Q	java:S125@"<This block of commented-out lines of code should be removed.(ÙµÑ‡
+<
+java:S1452V"&Remove usage of generic wildcard type.(¸ÕğÍ
+i	java:S100„"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—§…ÿÿÿÿÿ
+A	java:S106¦"+Replace this use of System.out by a logger.(±óÚß
+A	java:S106§"+Replace this use of System.out by a logger.(‹ş—¯
+@	java:S106©"+Replace this use of System.out by a logger.(³Ë‘G
+A	java:S106²"+Replace this use of System.out by a logger.(Ø¼¢ƒ
+A	java:S106´"+Replace this use of System.out by a logger.(ñšÔ
+n
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Qualifier'.(íàÄ®ıÿÿÿÿ
+Z
+java:S1128"DRemove this unused import 'org.springframework.http.HttpStatusCode'.(®å™Õ

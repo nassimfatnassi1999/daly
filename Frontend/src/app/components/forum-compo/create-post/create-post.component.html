@@ -9,7 +9,7 @@
   <!-- Single Page Header End -->
   
   <br>
-  <form (submit)="onSubmit()" class="form-container" enctype="multipart/form-data" #postForm="ngForm" style="font-size: medium;">
+  <form (submit)="onSubmit()" class="form-container" enctype="multipart/form-data" #postForm="ngForm">
     <div class="form-group">
       <label for="postTitle">Post Title:</label>
       <input type="text" id="postTitle" name="postTitle" [(ngModel)]="postTitle" class="form-control" placeholder="Enter post title..." required
@@ -43,7 +43,7 @@
         <option value="CUISINE_RECETTES">Cuisine et recettes</option>
       </select>
     </div>
-    <div class="button-container" >
+    <div class="button-container">
       <button type="submit" class="btn btn-primary" [disabled]="!postTitle || !postContent || !selectedTopic" >Submit</button>
       <button type="button" class="btn btn-secondary" routerLink="/forum">Cancel</button>
     </div>

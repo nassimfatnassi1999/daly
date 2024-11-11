@@ -36,12 +36,11 @@ form {
   
   .submit-btn,
   .cancel-btn {
-    flex: 2;
-    padding: 30px;
+    flex: 1;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: larger;
   }
   
   .submit-btn {

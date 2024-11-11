@@ -83,8 +83,6 @@ export class AddDishComponent implements OnInit {
   createDish(): void {
     console.log(this.newDish);
     if (!this.newDish || !this.newDish.restaurant || !this.newDish.restaurant.id_restaurant) {
-      console.log("the new dish "+this.newDish);
-      
       console.error('Restaurant ID is undefined');
       this.toastr.success('Dish added to the restaurant', 'Success');
       this.dialogRef.close();
@@ -92,7 +90,7 @@ export class AddDishComponent implements OnInit {
       return;
     }
     this.restaurantService.addDish(this.newDish.restaurant.id_restaurant, this.newDish).subscribe(() => {
-      this.dialogRef.close();
+      this.router.navigate(['/admin/restaurants']); // Adjust the route as needed
       this.toastr.success('Dish added to the restaurant', 'Success');
     }, (error) => {
       // Handle error

@@ -9,7 +9,7 @@ import { Dish } from '../../models/Dish';
 })
 export class RestaurantService {
 
-  private apiUrl = 'http://57.152.59.225:9090/restaurant/restaurants';
+  private apiUrl = 'http://localhost:9090/restaurant/restaurants';
 
   constructor(private http: HttpClient) {}
 
@@ -50,14 +50,5 @@ export class RestaurantService {
   }
   getDishesByRestaurantId(id: number): Observable<Dish[]> {
     return this.http.get<Dish[]>(`${this.apiUrl}/${id}/dishes`);
-  }
-  getBestSellerRestaurants(){
-    return this.http.get<Restaurant[]>(`${this.apiUrl}/bestseller`).pipe(
-      tap(data => console.log('Best sellers:', data)),
-      catchError(error => {
-        console.error('Error fetching restaurants:', error);
-        throw error;
-      })
-    );
   }
 }

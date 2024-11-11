@@ -11,11 +11,9 @@ import { FullResponse } from 'src/app/models/FullResponse';
 })
 export class AllergieServicesService {
 
-  // allergieURL => adresse du serveur Back.End
-  // allergieURL: string ="http://localhost:9050/api/Allergy";
 
-  allergieURL: string ="http://57.152.59.225:9090/apiachref/Allergy";
 
+  allergieURL: string ="http://localhost:9090/allergy";
 
   // httpClient : Bostagi
   constructor(
